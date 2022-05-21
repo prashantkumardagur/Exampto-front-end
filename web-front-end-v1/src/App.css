@@ -1,0 +1,65 @@
+.navbar{
+  top: 0;
+  height: 60px;
+  border-bottom: 2px solid var(--shadow);
+}
+.navbar a:hover{text-decoration: underline;}
+
+
+header{
+  top: 0;
+  height: 60px;
+  border-bottom: 2px solid var(--shadow);
+}
+.sideNav{
+  left: -320px;
+  top: 60px;
+  width: 300px;
+  max-width: 95vw;
+  height: calc(100vh - 60px);
+  border-right: 2px solid var(--shadow);
+}
+.sideNav.show{
+  left: 0;
+}
+.sideNav .iconHolder{margin-right: 10px;}
+.sideNav a{
+  color: var(--txt1);
+  font-family: var(--font2);
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 17px;
+  border-radius: 0 30px 30px 0;
+  padding-left: 30px;
+}
+.sideNav a.active{
+  background-color: var(--accent2);
+  color: var(--black);
+}
+.sideNav a:hover{
+  background-color: var(--bg3);
+}
+.sideNav a.active:hover{
+  background-color: var(--accent2);
+}
+main{
+  margin: 100px 30px 100px 330px;
+}
+main.cover{
+  margin-left: 30px;
+}
+.userIcon{ padding-top: 2px; padding-bottom: 2px;}
+.userIcon:hover{background-color: var(--bg3);}
+.userIcon:focus{outline: 2px solid var(--txt1);}
+
+.notificationCard{
+  right: -420px; top: 60px; bottom: 0;
+  width: 400px; max-width: calc(100vw - 60px);
+  border-left: 2px solid var(--shadow);
+}
+.notificationCard.show{
+  right: 0;
+}

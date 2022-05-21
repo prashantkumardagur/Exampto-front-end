@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { BrowserRouter } from 'react-router-dom';
 // import reportWebVitals from './reportWebVitals';
+
+import { AppContextProvider } from './store/AppContext';
+
+import GlobalLoader from './components/ui/GlobalLoader';
+const App = React.lazy(() => import('./App'));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <App />
+	<BrowserRouter>
+		<Suspense fallback={<GlobalLoader />}>
+			<AppContextProvider>
+				<App />
+			</AppContextProvider>
+		</Suspense>
+	</BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

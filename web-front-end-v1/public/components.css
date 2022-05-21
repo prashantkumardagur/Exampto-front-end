@@ -1,0 +1,55 @@
+.container{padding: 80px 5vw;}
+
+.btn{border: none; background: none; cursor: pointer;}
+.iconBtn{width: 1.6em; height: 1.6em;}
+.iconBtn:hover{background-color: var(--bg3);}
+
+.iconHolder{width: 1.2em; height: 1.2em;}
+
+
+/*=====================================================================================================*/
+
+.pageLoader{ width: 100%; padding-top: 20vh; font-size: 32px; text-align: center;}
+
+.loadingIcon{ height: 1em; width: 1em; overflow: hidden; display: inline-block;}
+
+.loadingIcon svg {
+  display: block;
+  margin: 0 auto;
+  animation: loading-spin 1s linear infinite;
+  will-change: transform;
+}
+
+@keyframes loading-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.loadingIcon circle {
+  stroke-dasharray: 210;
+  stroke-dashoffset: 210;
+  stroke-linecap: round;
+  animation: loading-spinner 1.7s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+  transform: translateZ(0);
+  transform-origin: center;
+  will-change: stroke-dashoffset;
+}
+
+@keyframes loading-spinner {
+  0% {
+    stroke-dashoffset: 190;
+    transform: scaleY(1);
+  }
+  49.99% {
+    stroke-dashoffset: 0;
+    transform: scaleY(1);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    transform: scaleY(-1) rotate(25deg);
+  }
+  100% {
+    stroke-dashoffset: 190;
+    transform: scaleY(-1) rotate(-32deg);
+  }
+}
