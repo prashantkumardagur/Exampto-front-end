@@ -4,11 +4,14 @@ import { Link } from 'react-router-dom';
 import IconButton from "../ui/IconButton";
 import IconHolder from "../ui/IconHolder";
 
-import AppContext from '../../store/AppContext';
 import Notifications from './Notifications';
+
+import AppContext from '../../store/AppContext';
+import AuthContext from '../../store/AuthContext';
 
 const Header = (props) => {
   const appContext = useContext(AppContext);
+  const authContext = useContext(AuthContext);
 
   return (
     <header className="d-flex align-center justify-between bg1 p-fixed pl-3 pr-4 w-100vw">
@@ -23,7 +26,7 @@ const Header = (props) => {
 
         <Link to='#' className="userIcon d-flex align-center pl-1 pr-3 rounded-5">
           <IconHolder icon='person' fontSize='32px' />
-          <span className="pl-1 txt1">Shubham Singh</span>
+          <span className="pl-1 txt1">{authContext.user.name}</span>
         </Link>
         
         <IconButton icon='logout' color='var(--red)' />

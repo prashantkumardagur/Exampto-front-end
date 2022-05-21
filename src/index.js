@@ -4,8 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 // import reportWebVitals from './reportWebVitals';
 
 import { AppContextProvider } from './store/AppContext';
+import { AuthContextProvider } from './store/AuthContext';
 
 import GlobalLoader from './components/ui/GlobalLoader';
+
 const App = React.lazy(() => import('./App'));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,7 +15,9 @@ root.render(
 	<BrowserRouter>
 		<Suspense fallback={<GlobalLoader />}>
 			<AppContextProvider>
-				<App />
+				<AuthContextProvider>
+					<App />
+				</AuthContextProvider>
 			</AppContextProvider>
 		</Suspense>
 	</BrowserRouter>
