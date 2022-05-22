@@ -19,6 +19,7 @@ const NavBar = () => {
 		<div className="leadingName h4">Exampto</div>
 		<ul className="nav-links ml-auto d-flex gap-2">
 			<NavLink to="/">Home</NavLink>
+			<NavLink to="/attemptexam/key">ExamPage</NavLink>
 			<NavLink to="/auth/login">Login</NavLink>
 			{authContext.isLoggedIn ? <>
 				<NavLink to={dashboardLink}>Dashboard</NavLink>

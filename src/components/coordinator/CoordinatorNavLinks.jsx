@@ -6,7 +6,7 @@ const CoordinatorNavLinks = () => {
   const checkActive = ({isActive}) => isActive ? 'active' : '';
 
   return (
-    <ul>
+    <>
       <li>
         <NavLink to='/coordinator/analytics' className={checkActive}>
           <IconHolder icon='analytics' color='#f00' /> 
@@ -25,7 +25,7 @@ const CoordinatorNavLinks = () => {
           New Test
         </NavLink>
       </li>
-    </ul>
+    </>
   );
 }
 

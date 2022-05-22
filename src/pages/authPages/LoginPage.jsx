@@ -19,10 +19,10 @@ const LoginPage = () => {
 
     return (<>
         <h2>This is Login Page</h2>
-        <button onClick={ () => { login('user') } }>User Login</button>
-        <button onClick={ () => { login('admin') } }>Admin Login</button>
-        <button onClick={ () => { login('coordinator')} }>Coordinator Login</button>
-        <button onClick={ authContext.logout }>Logout</button>
+        <button className="p-2 btn primary m-2" onClick={ () => { login('user') } }>User Login</button>
+        <button className="p-2 btn primary m-2" onClick={ () => { login('admin') } }>Admin Login</button>
+        <button className="p-2 btn primary m-2" onClick={ () => { login('coordinator')} }>Coordinator Login</button>
+        <button className="p-2 btn primary m-2" onClick={ authContext.logout }>Logout</button>
     </>)
 }
 

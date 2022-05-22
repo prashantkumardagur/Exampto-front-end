@@ -1,0 +1,72 @@
+.Qbtns{
+  display: flex;
+  padding: 0 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.Qbtn{
+  height: 40px; width: 40px;
+  color: black;
+  border: none;
+  background-color: var(--accent2);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: var(--font1);
+  transition: 0.2s;
+}
+.Qbtn.flagged{
+  background-color: #ffff7f;
+}
+.Qbtn.marked{
+  background-color: #75ff75;
+}
+.Qbtn.marked.flagged{
+  background-color: #faa0ff;
+}
+.Qbtn.active{
+  border-radius: 50%;
+  background-color: var(--accent1) !important;
+  color: white;
+}
+.sideNav .submitBtn{
+  color: black;
+  bottom: 20px;
+  background-color: var(--accent2);
+}
+.submitBtn:hover{
+  background-color: var(--accent1) !important;
+  color: white;
+}
+
+.option{
+  padding: 10px 10px 10px 50px;
+  border-radius: 6px;
+  border: 2px solid var(--shadow);
+  margin: 15px 0;
+  position: relative;
+}
+.option::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 15px; height: 15px;
+  top: 11px; left: 11px;
+  border: 2px solid var(--txt2);
+  border-radius: 50%;
+}
+.option:hover{
+  background-color: var(--accent2);
+  border-color: var(--accent2);
+  color: black;
+}
+.option:hover::before{
+  border-color: black;
+}
+.option.active{
+  border-color: var(--accent1);
+}
+.option.active::before{
+  border-color: var(--accent1);
+  background-color: var(--accent1);
+}

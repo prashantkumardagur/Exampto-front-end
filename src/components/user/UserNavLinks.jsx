@@ -6,7 +6,7 @@ const UserNavLinks = () => {
   const checkActive = ({isActive}) => isActive ? 'active' : '';
 
   return (
-    <ul>
+    <>
       <li>
         <NavLink to='/user/exams' className={checkActive}>
           <IconHolder icon='backup_table' color='#f00' /> 
@@ -31,7 +31,7 @@ const UserNavLinks = () => {
           Wallet
         </NavLink>
       </li>
-    </ul>
+    </>
   );
 }
 

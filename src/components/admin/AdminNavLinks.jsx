@@ -6,7 +6,7 @@ const AdminNavLinks = () => {
   const checkActive = ({isActive}) => isActive ? 'active' : '';
 
   return (
-    <ul>
+    <>
       <li>
         <NavLink to='/admin/analytics' className={checkActive}>
           <IconHolder icon='analytics' color='#16cb00' /> 
@@ -25,7 +25,7 @@ const AdminNavLinks = () => {
           Coordinators
         </NavLink>
       </li>
-    </ul>
+    </>
   );
 }
 

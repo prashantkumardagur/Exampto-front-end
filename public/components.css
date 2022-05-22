@@ -4,7 +4,15 @@
 .iconBtn{width: 1.6em; height: 1.6em;}
 .iconBtn:hover{background-color: var(--bg3);}
 
+.btn.primary{background-color: var(--accent1); color: white; border-radius: 6px; padding: 8px 15px; font-size: 16px;}
+.btn.large{padding: 10px 20px; font-size: 17px;}
+
 .iconHolder{width: 1.2em; height: 1.2em;}
+
+.data-box{border-radius: 6px; }
+.data-box.small{ padding: 2px 5px; font-size: 14px;}
+.data-box.medium{padding: 4px 8px; font-size: 16px;}
+.data-box.large{padding: 6px 10px; font-size: 18px;}
 
 
 /*=====================================================================================================*/

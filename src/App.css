@@ -45,6 +45,15 @@ header{
 .sideNav a.active:hover{
   background-color: var(--accent2);
 }
+.navFooter{
+  bottom: 10px;
+  border-top: 2px solid var(--shadow);
+}
+.navFooter .userIcon{
+  padding-left: 20px;
+}
+.navFooter .userIcon:hover{background-color: transparent;}
+
 main{
   margin: 100px 30px 100px 330px;
 }
@@ -62,4 +71,10 @@ main.cover{
 }
 .notificationCard.show{
   right: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  main{ margin: 100px 20px !important; }
+  .sideNav a{padding-left: 20px;}
 }

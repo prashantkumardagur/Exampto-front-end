@@ -11,6 +11,8 @@
     --grey: #555;
     --red: #f00;
 
+    --red-bg: #ffdddd;
+
     --shadow: #ddd;
 
     --txt1: #000;
@@ -74,7 +76,7 @@ img{display: block; max-width: 100%; height: auto;}
 
 label, input, textarea, select{display: block; width: 100%; font-family: inherit; font-size: 1em;}
 textarea{resize: none; min-height: 5rem;}
-button{font-family: var(--font2); font-weight: 600; color: var(--txt1);}
+button{font-family: var(--font2); font-weight: 600; color: var(--txt1); cursor: pointer;}
 
 
 
@@ -1540,4 +1542,10 @@ h6, .h6{font-size:16px;}
 .gap-xl3-5{grid-gap:50px;}
 
 
+}
+
+
+
+@media screen and (max-width:768px){
+    .d-mob-none{display:none;}
 }
