@@ -1,8 +1,24 @@
+
+.sideNav .submitBtn{
+  color: black;
+  bottom: 20px;
+  background-color: var(--accent2);
+  border: none;
+  width: 90%;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 0 50px 50px 0;
+  padding: 10px;
+}
+.submitBtn:hover{
+  background-color: var(--accent1) !important;
+  color: white;
+}
+
+
 .Qbtns{
-  display: flex;
-  padding: 0 20px;
-  flex-wrap: wrap;
   gap: 12px;
+  height: calc(100% - 150px);
 }
 .Qbtn{
   height: 40px; width: 40px;
@@ -26,15 +42,6 @@
 }
 .Qbtn.active{
   border-radius: 50%;
-  background-color: var(--accent1) !important;
-  color: white;
-}
-.sideNav .submitBtn{
-  color: black;
-  bottom: 20px;
-  background-color: var(--accent2);
-}
-.submitBtn:hover{
   background-color: var(--accent1) !important;
   color: white;
 }

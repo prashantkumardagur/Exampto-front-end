@@ -4,7 +4,7 @@
     --accent1: #0652dd;
     --accent2: #cce4ff;
 
-    --light-accent-bg: #e6f2ff;
+    --light-accent-bg: #e8f4ff;
 
     --black: #000;
     --white: #fff;
@@ -12,8 +12,10 @@
     --red: #f00;
 
     --red-bg: #ffdddd;
+    --green-bg: #aaffaa;
 
     --shadow: #ddd;
+    --overlay: #0002;
 
     --txt1: #000;
     --txt2: #555;
@@ -62,7 +64,7 @@ heading size variations with breakpoints
 body{font-family: var(--font1), sans-serif; line-height: 1.4; color: var(--txt1); background-color: var(--bg1);}
 
 h1, h2, h3, h4, h5, h6, .ch, .h1, .h2, .h3, .h4, .h5, .h6{
-    font-family: var(--font2), sans-serif; font-weight: 700; color: var(--txt1); line-height: 1;}
+    font-family: var(--font2), sans-serif; font-weight: 700; line-height: 1;}
 .ch{text-transform: uppercase; letter-spacing: 1px;}
 
 a{text-decoration: none; color: var(--accent1);}
@@ -94,6 +96,9 @@ button{font-family: var(--font2); font-weight: 600; color: var(--txt1); cursor: 
 
 .bg-black{background-color:#000000;}
 .bg-white{background-color:#ffffff;}
+.bg-red{background-color:var(--red-bg);}
+.bg-green{background-color:var(--green-bg);}
+
 .bg1{background-color:var(--bg1);}
 .bg2{background-color:var(--bg2);}
 .bg3{background-color:var(--bg3);}
@@ -107,8 +112,8 @@ button{font-family: var(--font2); font-weight: 600; color: var(--txt1); cursor: 
 .font-1{font-family:var(--font1);}
 .font-2{font-family:var(--font2);}
 
-.accent1{color:var(--color1);}
-.accent2{color:var(--color2);}
+.accent1{color:var(--accent1);}
+.accent2{color:var(--accent2);}
 .txt1{color:var(--txt1);}
 .txt2{color:var(--txt2);}
 .black{color:var(--black);}
@@ -205,15 +210,6 @@ button{font-family: var(--font2); font-weight: 600; color: var(--txt1); cursor: 
 
 .visible{visibility:visible;}
 .hidden{visibility:hidden;}
-
-
-
-/* Position */
-
-.p-relative{position:relative;}
-.p-absolute{position:absolute;}
-.p-fixed{position:fixed;}
-.p-sticky{position:sticky;}
 
 
 
@@ -415,6 +411,16 @@ h6, .h6{font-size:16px;}
 
 
 
+/* Position */
+
+.p-relative{position:relative;}
+.p-absolute{position:absolute;}
+.p-fixed{position:fixed;}
+.p-sticky{position:sticky;}
+
+
+
+
 /* ===== CSS breakpoint: xs ========================================================================================= */
 
 @media (min-width: 350px){
@@ -570,6 +576,15 @@ h6, .h6{font-size:16px;}
 .gap-xs-3{grid-gap:30px;}
 .gap-xs-4{grid-gap:40px;}
 .gap-xs-5{grid-gap:50px;}
+
+
+
+/* Position */
+
+.p-xs-relative{position:relative;}
+.p-xs-absolute{position:absolute;}
+.p-xs-fixed{position:fixed;}
+.p-xs-sticky{position:sticky;}
 
 }
     
@@ -733,6 +748,15 @@ h6, .h6{font-size:16px;}
 .gap-sm-4{grid-gap:40px;}
 .gap-sm-5{grid-gap:50px;}
 
+
+
+/* Position */
+
+.p-sm-relative{position:relative;}
+.p-sm-absolute{position:absolute;}
+.p-sm-fixed{position:fixed;}
+.p-sm-sticky{position:sticky;}
+
 }
 
 
@@ -893,6 +917,15 @@ h6, .h6{font-size:16px;}
 .gap-md-3{grid-gap:30px;}
 .gap-md-4{grid-gap:40px;}
 .gap-md-5{grid-gap:50px;}
+
+
+
+/* Position */
+
+.p-md-relative{position:relative;}
+.p-md-absolute{position:absolute;}
+.p-md-fixed{position:fixed;}
+.p-md-sticky{position:sticky;}
 
 
 }
@@ -1057,6 +1090,15 @@ h6, .h6{font-size:16px;}
 .gap-lg-5{grid-gap:50px;}
 
 
+
+/* Position */
+
+.p-lg-relative{position:relative;}
+.p-lg-absolute{position:absolute;}
+.p-lg-fixed{position:fixed;}
+.p-lg-sticky{position:sticky;}
+
+
 }
 
 
@@ -1216,6 +1258,15 @@ h6, .h6{font-size:16px;}
 .gap-xl-3{grid-gap:30px;}
 .gap-xl-4{grid-gap:40px;}
 .gap-xl-5{grid-gap:50px;}
+
+
+
+/* Position */
+
+.p-xl-relative{position:relative;}
+.p-xl-absolute{position:absolute;}
+.p-xl-fixed{position:fixed;}
+.p-xl-sticky{position:sticky;}
 
 
 }
@@ -1380,6 +1431,15 @@ h6, .h6{font-size:16px;}
 .gap-xl2-5{grid-gap:50px;}
 
 
+
+/* Position */
+
+.p-xl2-relative{position:relative;}
+.p-xl2-absolute{position:absolute;}
+.p-xl2-fixed{position:fixed;}
+.p-xl2-sticky{position:sticky;}
+
+
 }
 
 
@@ -1540,6 +1600,15 @@ h6, .h6{font-size:16px;}
 .gap-xl3-3{grid-gap:30px;}
 .gap-xl3-4{grid-gap:40px;}
 .gap-xl3-5{grid-gap:50px;}
+
+
+
+/* Position */
+
+.p-xl3-relative{position:relative;}
+.p-xl3-absolute{position:absolute;}
+.p-xl3-fixed{position:fixed;}
+.p-xl3-sticky{position:sticky;}
 
 
 }

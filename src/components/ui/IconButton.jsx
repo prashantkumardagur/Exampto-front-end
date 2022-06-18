@@ -1,3 +1,5 @@
+import React from "react";
+
 const IconButton = (props) => {
 
   return (
@@ -20,4 +22,4 @@ IconButton.defaultProps = {
   onClick: () => { console.log('clicked') }
 }
 
-export default IconButton;
+export default React.memo(IconButton);

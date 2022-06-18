@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import AuthContext from '../../store/AuthContext';
 
@@ -19,16 +19,15 @@ const NavBar = () => {
 		<div className="leadingName h4">Exampto</div>
 		<ul className="nav-links ml-auto d-flex gap-2">
 			<NavLink to="/">Home</NavLink>
-			<NavLink to="/attemptexam/key">ExamPage</NavLink>
-			<NavLink to="/auth/login">Login</NavLink>
 			{authContext.isLoggedIn ? <>
 				<NavLink to={dashboardLink}>Dashboard</NavLink>
+				<a onClick={authContext.logout} className='cursor-pointer'>Logout</a>
 			</> : <>
+				<NavLink to="/auth/login">Login</NavLink>
 				<NavLink to="/auth/signup">SignUp</NavLink>
-				<NavLink to="/auth/adminlogin">AdminLogin</NavLink>
 			</>}
 		</ul>
 	</nav>);
 }
 
-export default NavBar;
+export default React.memo(NavBar);

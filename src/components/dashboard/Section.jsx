@@ -3,8 +3,8 @@ const Section = (props) => {
   if(props.placeholder) content = <div className="bg3" style={{height: '120px'}}></div>
 
   return (
-    <section className="pb-6">
-      <h2 className="pb-2">{props.heading}</h2>
+    <section className="pb-7">
+      <h2 className="pb-4">{props.heading}</h2>
       {content}
     </section>
   );

@@ -7,7 +7,6 @@ import PageLoader from "../ui/PageLoader";
 const HomePage = React.lazy(() => import("../../pages/HomePage"));
 const LoginPage = React.lazy(() => import('../../pages/authPages/LoginPage'));
 const SignUpPage = React.lazy(() => import('../../pages/authPages/SignUpPage'));
-const AdminLoginPage = React.lazy(() => import('../../pages/authPages/AdminLoginPage'));
 
 const GlobalPage = () => {
   return (<>
@@ -19,7 +18,6 @@ const GlobalPage = () => {
           <Route path='/auth' element={<Navigate to='/auth/login' replace />} />
           <Route path='/auth/login' element={<LoginPage />} />
           <Route path='/auth/signup' element={<SignUpPage />} />
-          <Route path='/auth/adminlogin' element={<AdminLoginPage />} />
         </Routes>
       </Suspense>
     </div>

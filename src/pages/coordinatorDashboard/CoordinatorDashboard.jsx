@@ -7,6 +7,7 @@ import PageLoader from "../../components/ui/PageLoader";
 const AnalyticsSection = React.lazy(() => import('./AnalyticsSection'));
 const MyTestsSection = React.lazy(() => import('./MyTestsSection'));
 const NewTestSection = React.lazy(() => import('./NewTestSection'));
+const ViewExamPage = React.lazy(() => import('./ViewExamPage'));
 
 const UserDashboard = () => {
 	const [navVisibility, setNavVisibility] = useState(true);
@@ -26,6 +27,7 @@ const UserDashboard = () => {
 					<Route path='/analytics' element={<AnalyticsSection />} />
 					<Route path='/mytests' element={<MyTestsSection />} />
 					<Route path='/newtest' element={<NewTestSection />} />
+					<Route path='/viewexam/:id' element={<ViewExamPage />} />
 				</Routes>
 			</Suspense>
 		</main>

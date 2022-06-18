@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import IconButton from "../ui/IconButton";
@@ -12,18 +12,27 @@ import AuthContext from '../../store/AuthContext';
 import UserNavLinks from "../user/UserNavLinks";
 import AdminNavLinks from "../admin/AdminNavLinks";
 import CoordinatorNavLinks from "../coordinator/CoordinatorNavLinks";
+import Model from '../ui/Model';
 
 
 const Navigation = (props) => {
-
+  const [model, setModel] = useState(false);
   const appContext = useContext(AppContext);
-  const { user } = useContext(AuthContext);
+  const { person, logout } = useContext(AuthContext);
 
   const isMobile = window.innerWidth < 768;
 
   let navlinks = <UserNavLinks />;
   if (props.type === "admin") navlinks = <AdminNavLinks />;
   if (props.type === "coordinator") navlinks = <CoordinatorNavLinks />;
+
+
+  const logoutHandler = () => { 
+    setModel({
+      heading: 'Logout ?',
+      text: 'Are you sure you want to logout ?',
+    })
+   }
 
 
   return (<>
@@ -36,9 +45,11 @@ const Navigation = (props) => {
       <aside className="d-flex align-center gap-1 gap-md-2">
         <IconButton icon='brightness_6' onClick={appContext.toggleDarkMode} />
         <Notifications />
-        <UserIcon text={user.name} />
-        <IconButton icon='logout' color='var(--red)' className='d-mob-none' />
+        <UserIcon text={person.name} />
+        <IconButton icon='logout' color='var(--red)' className='d-mob-none' onClick={logoutHandler} />
       </aside>
+
+      { model && <Model content={model} onContinue={logout} onCancel={() => {setModel(false)}} /> }
     </header>
 
     <nav className={`${props.navVisibility ? 'show' : ''} sideNav bg1 p-fixed pt-4 t-2`} onClick={isMobile ? props.toggleNav : null}>
@@ -47,10 +58,10 @@ const Navigation = (props) => {
       <div className="navFooter p-absolute d-flex align-center justify-between w-100 d-md-none">
         <Link to='#' className="userIcon align-center">
           <IconHolder icon='person' fontSize='32px' />
-          <span className="txt1">{user.name}</span>
+          <span className="txt1">{person.name}</span>
         </Link>
 
-        <IconButton icon='logout' color='var(--red)' className='pr-3' />
+        <IconButton icon='logout' color='var(--red)' className='pr-3' onClick={logoutHandler} />
       </div>
 
     </nav>

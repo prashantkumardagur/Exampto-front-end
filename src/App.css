@@ -2,6 +2,7 @@
   top: 0;
   height: 60px;
   border-bottom: 2px solid var(--shadow);
+  background-color: var(--bg1);
 }
 .navbar a:hover{text-decoration: underline;}
 
@@ -9,6 +10,7 @@
 header{
   top: 0;
   height: 60px;
+  z-index: 999;
   border-bottom: 2px solid var(--shadow);
 }
 .sideNav{
@@ -18,6 +20,7 @@ header{
   max-width: 95vw;
   height: calc(100vh - 60px);
   border-right: 2px solid var(--shadow);
+  z-index: 999;
 }
 .sideNav.show{
   left: 0;
@@ -55,7 +58,10 @@ header{
 .navFooter .userIcon:hover{background-color: transparent;}
 
 main{
-  margin: 100px 30px 100px 330px;
+  margin: 60px 0 0 300px;
+  padding: 40px 30px 100px;
+  max-height: calc(100vh - 60px);
+  overflow-y: scroll;
 }
 main.cover{
   margin-left: 30px;
@@ -68,13 +74,22 @@ main.cover{
   right: -420px; top: 60px; bottom: 0;
   width: 400px; max-width: calc(100vw - 60px);
   border-left: 2px solid var(--shadow);
+  z-index: 999;
 }
 .notificationCard.show{
   right: 0;
 }
 
 
+
+
+::-webkit-scrollbar {width: 8px;}
+::-webkit-scrollbar-thumb { background: var(--shadow); border-radius: 6px;}
+::-webkit-scrollbar-thumb:hover {background: var(--txt2);}
+
+
+
 @media screen and (max-width: 768px) {
-  main{ margin: 100px 20px !important; }
+  main{ margin: 60px 0 !important; padding: 40px 5vw; }
   .sideNav a{padding-left: 20px;}
 }

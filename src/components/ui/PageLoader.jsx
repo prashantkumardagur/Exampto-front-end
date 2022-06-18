@@ -1,3 +1,4 @@
+import React from "react";
 import LoadingIcon from "./LoadingIcon";
 
 const PageLoader = (props) => {
@@ -6,4 +7,4 @@ const PageLoader = (props) => {
 
 PageLoader.defaultProps = {text: "Loading..."};
 
-export default PageLoader;
+export default React.memo(PageLoader);

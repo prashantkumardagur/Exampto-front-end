@@ -1,0 +1,60 @@
+
+.sideNav .submitBtn{
+  color: black;
+  bottom: 20px;
+  background-color: var(--accent2);
+}
+.submitBtn:hover{
+  background-color: var(--accent1) !important;
+  color: white;
+}
+
+.sideNav .sideTab{
+  color: var(--txt1);
+  font-family: var(--font2);
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  border-radius: 0 30px 30px 0;
+  padding-left: 30px;
+  border: none;
+  background-color: transparent;
+}
+.sideNav .sideTab.active{
+  background-color: var(--accent1);
+  color: var(--white);
+}
+.sideNav .sideTab:hover{
+  background-color: var(--bg3);
+}
+.sideNav .sideTab.active:hover{
+  background-color: var(--accent1);
+}
+.sideNav .sideTab.active span{
+  color: var(--white) !important;
+}
+
+
+.Qbtns{
+  gap: 12px;
+  height: calc(100% - 240px);
+}
+.Qbtn{
+  height: 40px; width: 40px;
+  color: black;
+  border: none;
+  background-color: var(--accent2);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: var(--font1);
+  transition: 0.2s;
+}
+.Qbtn.active{
+  border-radius: 50%;
+  background-color: var(--accent1) !important;
+  color: white;
+}

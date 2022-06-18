@@ -9,16 +9,22 @@ const AdminDashboard = React.lazy(() => import('./pages/adminDashboard/AdminDash
 const CoordinatorDashboard = React.lazy(() => import('./pages/coordinatorDashboard/CoordinatorDashboard'));
 
 const ExamPage = React.lazy(() => import('./pages/ExamPage'));
+const EditorPage = React.lazy(() => import('./pages/EditorPage'));
 
 function App() {
   return (
     <Routes>
       <Route path='/*' element={<GlobalPage />} />
+
       <Route path='/user/*' element={<UserDashboard />} />
       <Route path='/admin/*' element={<AdminDashboard />} />
       <Route path='/coordinator/*' element={<CoordinatorDashboard />} />
+
       <Route path='/attemptexam/' element={<Navigate to='/user/exams' replace />} />
-      <Route path='/attemptexam/*' element={<ExamPage />} />
+      <Route path='/attemptexam/:id' element={<ExamPage />} />
+
+      <Route path='/exameditor/' element={<Navigate to='/coordinator' replace />} />
+      <Route path='/exameditor/:id' element={<EditorPage />} />
     </Routes>
   );
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 import IconHolder from "./IconHolder";
@@ -17,4 +18,4 @@ UserIcon.defaultProps = {
   link: '#'
 }
 
-export default UserIcon;
+export default React.memo(UserIcon);

@@ -1,7 +1,8 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 
 import AppContext from '../../store/AppContext';
 import AuthContext from '../../store/AuthContext';
+import ExamContext from '../../store/ExamPageContext';
 
 import DataBox from '../ui/DataBox';
 import IconButton from "../ui/IconButton";
@@ -9,8 +10,9 @@ import UserIcon from '../ui/UserIcon';
 import Timer from './Timer';
 
 const ExamHeader = (props) => {
-  const appContext = useContext(AppContext);
-  const authContext = useContext(AuthContext);
+  const { toggleDarkMode } = useContext(AppContext);
+  const { person } = useContext(AuthContext);
+  const { initialRemainingTime } = useContext(ExamContext);
 
   return (
     <header className="d-flex align-center justify-between bg1 p-fixed p-2 pl-md-3 pr-md-4 w-100vw">
@@ -21,12 +23,12 @@ const ExamHeader = (props) => {
       </div>
 
       <aside className="d-flex align-center gap-1 gap-md-2">
-        <IconButton icon='brightness_6' onClick={appContext.toggleDarkMode} />
-        <UserIcon text={authContext.user.name} />
-        <Timer time={'90 : 30'} />
+        <IconButton icon='brightness_6' onClick={toggleDarkMode} />
+        <UserIcon text={person.name} />
+        <Timer remainingTime={initialRemainingTime} />
       </aside>
     </header>
   );
 }
 
-export default ExamHeader;
+export default React.memo(ExamHeader);

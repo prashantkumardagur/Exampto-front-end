@@ -1,7 +1,9 @@
+import React from "react";
+
 const IconHolder = (props) => {
-  return (<div className={`${props.className} iconHolder d-inflex flex-center`} style={{fontSize: props.fontSize}}>
+  return (<span className={`${props.className} iconHolder d-inflex flex-center`} style={{fontSize: props.fontSize}}>
     <span className="material-symbols-outlined" style={{color: props.color, fontSize: 'inherit'}}>{props.icon}</span>
-  </div>);
+  </span>);
 }
 
 IconHolder.defaultProps = {
@@ -11,4 +13,4 @@ IconHolder.defaultProps = {
   fontSize: '1.2em',
 }
 
-export default IconHolder;
+export default React.memo(IconHolder);

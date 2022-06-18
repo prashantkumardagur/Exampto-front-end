@@ -8,6 +8,7 @@ const ExamSection = React.lazy(() => import('./ExamSection'));
 const PracticeSection = React.lazy(() => import('./PracticeSection'));
 const ResultSection = React.lazy(() => import('./ResultSection'));
 const WalletSection = React.lazy(() => import('./WalletSection'));
+const ViewExamPage = React.lazy(() => import('./ViewExamPage'));
 
 const UserDashboard = () => {
   const [navVisibility, setNavVisibility] = useState(true);
@@ -28,6 +29,7 @@ const UserDashboard = () => {
           <Route path='/practice' element={<PracticeSection />} />
           <Route path='/results' element={<ResultSection />} />
           <Route path='/wallet' element={<WalletSection />} />
+          <Route path='/viewexam/:id/*' element={<ViewExamPage />} />
         </Routes>
       </Suspense>
     </main>
