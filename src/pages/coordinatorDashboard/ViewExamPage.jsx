@@ -1,20 +1,28 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 
 import ExamDetails from "../../components/dashboard/ExamDetails";
 import ExamInstructions from "../../components/dashboard/ExamInstructions";
 import DataBox from "../../components/ui/DataBox";
-import { getExamAPI } from "../../api/coordinator";
-import AuthContext from "../../store/AuthContext";
 
-import { declareResultsAPI } from "../../api/coordinator";
+import { getExamAPI, declareResultsAPI } from "../../api/coordinator";
+import AuthContext from "../../store/AuthContext";
+import AppContext from "../../store/AppContext";
+
+
+
 
 const ViewExamPage = () => {
   const { id } = useParams();
   const { token } = useContext(AuthContext);
+  const { setModel } = useContext(AppContext);
 
   const [exam, setExam] = useState(null);
+  const [sideBtns, setSideBtns] = useState('');
 
+
+
+  // effect to get the exam details
   useEffect(() => {
     const getExam = async () => {
       const response = await getExamAPI(token, id);
@@ -27,7 +35,9 @@ const ViewExamPage = () => {
 
 
 
-  const declareResults = async () => {
+
+  // declare the results of the exam
+  const declareResults = useCallback( async () => {
     const response = await declareResultsAPI(token, id);
     if(response.status !== "success") { console.log(response.message); return; }
 
@@ -39,20 +49,40 @@ const ViewExamPage = () => {
           resultsDeclared: true,
           resultsDeclaredOn: Date.now()
         }
-      }
-    })
+    } }) 
 
-  }
+  }, [id, token]);
+
+  // Handler to declare the results of the exam button
+  const declareResultsHandler = useCallback( () => {
+    setModel({
+      heading: "Declare Results?",
+      text: "Are you sure you want to declare the results of this exam?",
+      onContinue: declareResults
+    });
+  }, [setModel, declareResults] )
 
 
 
-  let sideBtns = '';
-  if(exam){
-    if(exam.startTime > Date.now()) sideBtns = <DataBox icon='check_circle' content='Exam published' size='large' />;
-    else if(exam.lastStartTime + exam.duration * 60 * 1000 > Date.now()) sideBtns = <DataBox icon='album' content='Exam in progress' size='large' />;
-    else if(exam.meta.resultDeclared) sideBtns = <DataBox icon='check_circle' content='Results declared' size='large' />;
-    else sideBtns = <button className='btn primary' onClick={declareResults}>Declare Results</button>;
-  }
+
+  // Effect to set the side buttons
+  useEffect(() => {
+    if(!exam) return;
+
+    if(exam.startTime > Date.now()) 
+        setSideBtns(<DataBox icon='check_circle' content='Exam published' size='large' />);
+
+    else if(exam.lastStartTime + exam.duration * 60 * 1000 > Date.now())
+        setSideBtns(<DataBox icon='album' content='Exam in progress' size='large' />);
+
+    else if(exam.meta.resultDeclared)
+        setSideBtns(<DataBox icon='check_circle' content='Results declared' size='large' />);
+
+    else setSideBtns(<button className="btn primary large" onClick={declareResultsHandler}>Declare Results</button>);
+  }, [exam, declareResultsHandler]);
+
+
+
 
   return (<>
     <ExamDetails exam={exam} sideBtns={sideBtns} />

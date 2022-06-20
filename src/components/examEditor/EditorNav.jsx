@@ -4,11 +4,17 @@ import IconHolder from "../ui/IconHolder";
 
 import EditorContext from "../../store/EditorContext";
 
+
+
+
 const EditorNav = (props) => {
+
   const { page, setPage, currentQuestion, changeQuestion, exam } = useContext(EditorContext);
   const answers = exam.answers;
 
   let isMobile = window.innerWidth < 768;
+
+  
 
   return (
   <nav className={`${props.navVisibility ? 'show' : ''} sideNav bg1 p-fixed pt-4 t-2 z-5`} onClick={isMobile ? props.toggleNav : null}>

@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import IconButton from "../ui/IconButton";
 
+
+
 const NotificationCard = (props) => {
   return(
     <div className={`${props.visibility ? 'show' : ''} notificationCard bg1 p-fixed p-3 t-2`}>
@@ -12,6 +14,9 @@ const NotificationCard = (props) => {
     </div>
   )
 }
+
+
+
 
 const Notifications = () => {
   const [visibility, setVisibility] = useState(false);

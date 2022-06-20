@@ -10,8 +10,12 @@ const ResultSection = React.lazy(() => import('./ResultSection'));
 const WalletSection = React.lazy(() => import('./WalletSection'));
 const ViewExamPage = React.lazy(() => import('./ViewExamPage'));
 
+
+
+
 const UserDashboard = () => {
   const [navVisibility, setNavVisibility] = useState(true);
+
 
   useEffect(() => {
     if(window.innerWidth < 768) {
@@ -19,8 +23,12 @@ const UserDashboard = () => {
     }
   }, []);
 
+
+
+
   return (<>
     <Navigation type='user' navVisibility={navVisibility} toggleNav={ () => {setNavVisibility(!navVisibility)} } />
+    
     <main className={`${navVisibility ? '' : 'cover'} t-2`}>
       <Suspense fallback={<div><PageLoader /></div>}>
         <Routes>

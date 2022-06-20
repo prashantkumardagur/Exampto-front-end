@@ -9,11 +9,19 @@ import LoadingIcon from "../../components/ui/LoadingIcon";
 
 import AuthContext from "../../store/AuthContext";
 
+
+
+
 const LoginPage = () => {
+
     const authContext = useContext(AuthContext);
     const navigate = useNavigate();
+
     const [state, setState] = useState(null);
 
+
+
+    // handles the login form submit
     const submitHandler = async (e) => {
         setState({ msg: <span><LoadingIcon /> Trying to login</span>, color: "accent" });
         const formData = new FormData(e.target);
@@ -33,16 +41,20 @@ const LoginPage = () => {
         setTimeout(() => { navigate("/") }, 1000);
     }
 
+
+
+
     return (<div className="authForm m-auto my-5 p-3 border-2 rounded-2">
-    <h3 className="mb-2">Login to Exampto</h3>
-    {state && <DataBox content={state.msg} color={state.color} size='small' />}
-    <Form onSubmit={submitHandler}>
-        <InputField label='Email' id='email' name='email' />
-        <InputField label='Password' id='password' name='password' type='password' />
-        <button className="btn primary mt-4">Login</button>
-        <p className="d-inline pl-2">OR <BtnLink to='/auth/signup' text='SignUp' /> instead.</p>
-    </Form>
-</div>)
+        <h3 className="mb-2">Login to Exampto</h3>
+        {state && <DataBox content={state.msg} color={state.color} size='small' />}
+        <Form onSubmit={submitHandler}>
+            <InputField label='Email' id='email' name='email' />
+            <InputField label='Password' id='password' name='password' type='password' />
+            <button className="btn primary mt-4">Login</button>
+            <p className="d-inline pl-2">OR <BtnLink to='/auth/signup' text='SignUp' /> instead.</p>
+        </Form>
+    </div>)
+
 }
 
 export default LoginPage;

@@ -7,6 +7,8 @@ import AuthContext from "./AuthContext";
 import { getExamAPI } from "../api/editor";
 
 
+
+// EditorContext definition
 const EditorContext = React.createContext({
   exam: {},
   currentQuestion: 0,
@@ -20,7 +22,7 @@ export default EditorContext;
 
 
 
-
+// EditorContext provider component
 export const EditorContextProvider = (props) => {
   
     const navigate = useNavigate();
@@ -60,6 +62,7 @@ export const EditorContextProvider = (props) => {
       setCurrentQuestion(n);
       setPage(4);
     }
+
 
 
 

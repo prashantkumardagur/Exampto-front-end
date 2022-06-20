@@ -6,6 +6,9 @@ import Section from "../../components/dashboard/Section";
 import AuthContext from "../../store/AuthContext";
 import { getExamsAPI } from "../../api/user";
 
+
+
+
 const ExamSection = () => {
   const { token } = useContext(AuthContext);
 
@@ -15,6 +18,9 @@ const ExamSection = () => {
     completedExams: [],
   })
 
+
+
+  // Effect to get exams
   useEffect(() => {
     const getUserExams = async () => {
       const response = await getExamsAPI(token);
@@ -35,6 +41,8 @@ const ExamSection = () => {
     getUserExams();
   }, [token])
 
+
+  
 
   return (<>
     <Section heading="Exams you are enrolled in" >

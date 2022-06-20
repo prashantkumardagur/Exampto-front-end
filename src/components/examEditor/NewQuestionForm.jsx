@@ -10,10 +10,17 @@ import LoadingIcon from "../ui/LoadingIcon";
 import EditorContext from "../../store/EditorContext";
 import { addQuestionAPI } from "../../api/editor";
 
+
+
+
 const NewQuestionForm = () => {
+
   const [btnState, setBtnState] = useState('');
   const { token, exam, setExam } = useContext(EditorContext);
 
+
+
+  // Handles form submission
   const submitHandler = async (e) => {
     setBtnState(<span><LoadingIcon /> Adding question...</span>);
     const formData = new FormData(e.target);
@@ -43,6 +50,9 @@ const NewQuestionForm = () => {
     setExam(newExam);    
   }
 
+
+
+  
   return (<>
   <h2 className="pb-3">NewQuestionForm</h2>
   <Form onSubmit={submitHandler} onChange={() => {setBtnState('')}}>

@@ -1,12 +1,16 @@
 import React, { Suspense } from "react";
-import NavBar from "./NavBar";
 import { Navigate, Routes, Route } from "react-router-dom";
 
+import NavBar from "./NavBar";
 import PageLoader from "../ui/PageLoader";
+
 
 const HomePage = React.lazy(() => import("../../pages/HomePage"));
 const LoginPage = React.lazy(() => import('../../pages/authPages/LoginPage'));
 const SignUpPage = React.lazy(() => import('../../pages/authPages/SignUpPage'));
+
+
+
 
 const GlobalPage = () => {
   return (<>

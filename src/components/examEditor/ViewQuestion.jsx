@@ -12,7 +12,10 @@ import EditorContext from "../../store/EditorContext";
 import { updateQuestionAPI, deleteQuestionAPI } from "../../api/editor";
 
 
+
+
 const ViewQuestion = () => {
+
   const { exam, currentQuestion, setExam, token, setPage } = useContext(EditorContext);
   const answer = exam.answers[currentQuestion];
   const question = exam.contents[currentQuestion].question;
@@ -22,6 +25,9 @@ const ViewQuestion = () => {
   const [model, setModel] = useState(false);
   const [btnState, setBtnState] = useState('');
 
+
+
+  // Handles form submission
   const submitHandler = async (e) => {
     setBtnState(<span><LoadingIcon />Updating</span>)
     const formData = new FormData(e.target);
@@ -48,6 +54,8 @@ const ViewQuestion = () => {
   }
 
 
+
+  // Deletes the question
   const deleteQuestion = async () => {
     setBtnState(<span><LoadingIcon /> Deleting...</span>);
     setModel(false);
@@ -62,6 +70,7 @@ const ViewQuestion = () => {
     setPage(1);
   }
 
+  // Handles delete button click
   const deleteHandler = async () => {
     setModel({
       heading: "Delete Question?",
@@ -70,6 +79,8 @@ const ViewQuestion = () => {
   }
 
 
+
+  
   return (<>
     <h2>View Question {currentQuestion+1}</h2>
 

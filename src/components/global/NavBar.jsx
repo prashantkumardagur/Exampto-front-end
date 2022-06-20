@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import AuthContext from '../../store/AuthContext';
 
+
+
+
 const NavBar = () => {
 	const authContext = useContext(AuthContext);
 	let dashboardLink = '/';
@@ -15,6 +18,9 @@ const NavBar = () => {
 		}
 	}
 
+
+
+	
 	return (<nav className='navbar w-100vw p-fixed d-flex align-center px-5vw'>
 		<div className="leadingName h4">Exampto</div>
 		<ul className="nav-links ml-auto d-flex gap-2">

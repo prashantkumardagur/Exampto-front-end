@@ -8,10 +8,15 @@ import UserIcon from "../ui/UserIcon";
 import AuthContext from "../../store/AuthContext";
 import AppContext from "../../store/AppContext";
 
+
+
+
 const EditorHeader = (props) => {
 
   const { person, logout } = useContext(AuthContext);
   const appContext = useContext(AppContext);
+
+  
 
   return (
   <header className="d-flex align-center justify-between bg1 p-fixed p-2 pl-md-3 pr-md-4 w-100vw">

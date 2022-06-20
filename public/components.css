@@ -64,6 +64,7 @@
 .contentItem .option{padding: 3px 8px; font-weight: 400; border-radius: 5px; margin-bottom: 10px;
     background-color: var(--light-accent-bg); color: var(--black);}
 .contentItem .option.correct{background-color: var(--green-bg);}
+.contentItem .option.selected{outline: 2px solid var(--accent1);}
 
 
 /*=====================================================================================================*/
@@ -82,8 +83,11 @@
 .authForm{max-width: 400px;}
 
 
-.file-access{border-radius: 6px;}
-.file-access button{background-color: var(--accent1); color: white; border: none;}
+.file-access, .copy-to-clipboard{border-radius: 6px;}
+.file-access p, .copy-to-clipboard p
+    {max-width: calc(100% - 100px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+.file-access button, .copy-to-clipboard button
+    {background-color: var(--accent1); color: white; border: none;}
 
 
 /*=====================================================================================================*/

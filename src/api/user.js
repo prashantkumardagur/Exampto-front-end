@@ -5,6 +5,11 @@ export const getExamAPI = (token, id) => {
   return runAPI('/user/get-exam', token, { id });
 }
 
+// Gets complete exam details for a result
+export const getResultAPI = (token, id) => {
+  return runAPI('/user/get-result', token, { id });
+}
+
 // Gets all exams for a user
 export const getExamsAPI = async (token) => {
   return await runAPI("/user/get-exams", token);

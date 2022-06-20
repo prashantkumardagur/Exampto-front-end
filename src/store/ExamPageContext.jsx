@@ -7,6 +7,7 @@ import AuthContext from "./AuthContext";
 import { initializeExamAPI, markAnswerAPI, submitExamAPI } from "../api/exam";
 
 
+// EditorContext definition
 const ExamContext = React.createContext({
   exam : {},
   token : null,
@@ -24,11 +25,14 @@ const ExamContext = React.createContext({
 export default ExamContext;
 
 
+
+// EditorContext provider component
 export const ExamContextProvider = (props) => {
 
   const navigate = useNavigate();
   const { id } = useParams();
   const { token } = useContext(AuthContext);
+
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -40,7 +44,8 @@ export const ExamContextProvider = (props) => {
   const [initialRemainingTime, setInitialRemainingTime] = useState(300);
 
 
-  // Initialize exam
+
+  // Effect to initialize exam
   useEffect(() => {
 
     const initializeExam = async () => {

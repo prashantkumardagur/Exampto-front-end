@@ -8,14 +8,23 @@ const AnalyticsSection = React.lazy(() => import('./AnalyticsSection'));
 const UserSection = React.lazy(() => import('./UserSection'));
 const CoordinatorSection = React.lazy(() => import('./CoordinatorSection'));
 
+
+
+
 const UserDashboard = () => {
 	const [navVisibility, setNavVisibility] = useState(true);
 
+
+	// Effect to toggle the navbar visibility on smaller screens
   useEffect(() => {
     if(window.innerWidth < 768) {
       setNavVisibility(false);
     }
   }, []);
+
+
+
+	
 
 	return (<>
     <Navigation type='admin' navVisibility={navVisibility} toggleNav={ () => {setNavVisibility(!navVisibility)} } />

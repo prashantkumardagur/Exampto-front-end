@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 import { refreshTokenAPI, loginAPI } from "../api/auth";
 
+
+// AuthContext definition
 const AuthContext = React.createContext({
   isLoggedIn: false,
   person: {},
@@ -11,12 +13,20 @@ const AuthContext = React.createContext({
   logout: () => {},
 });
 
+export default AuthContext;
+
+
+
+// AuthContext provider component
 export const AuthContextProvider = (props) => {
+
   const navigate = useNavigate();
 
   const [token, setToken] = useState(null);
   const [person, setPerson] = useState({});
 
+
+  // Effect to refresh the token on mount
   useEffect(() => {
 
     const getLoginData = async () => {
@@ -50,6 +60,9 @@ export const AuthContextProvider = (props) => {
 
   }, []);
 
+
+
+  // Function to login
   const login = async (credentials) => {
     let response = await loginAPI(credentials);
     if(response.status === 'success'){
@@ -65,6 +78,7 @@ export const AuthContextProvider = (props) => {
     }
   }
 
+  // Function to logout
   const logout = async () => {
     localStorage.removeItem('token');
     localStorage.removeItem('person');
@@ -76,6 +90,8 @@ export const AuthContextProvider = (props) => {
 
 
 
+
+  // AuthContext provider value
   const authContextValue = {
     isLoggedIn: !!token,
     token,
@@ -91,5 +107,3 @@ export const AuthContextProvider = (props) => {
     </AuthContext.Provider>
   );
 }
-
-export default AuthContext;

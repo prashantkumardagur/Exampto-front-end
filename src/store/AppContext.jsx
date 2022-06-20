@@ -6,19 +6,19 @@ import AlertBox from "../components/ui/overlay/AlertBox";
 import changeMode from "../lib/changeMode";
 
 
-
+// AppContext definition
 const AppContext = React.createContext({
   darkMode: false,
   toggleDarkMode: () => {},
   setModel: () => {},
-  setAlert: () => {},
+  showAlert: () => {},
 });
 
 export default AppContext;
 
 
 
-
+// AppContext provider component
 export const AppContextProvider = (props) => {
 
   const [darkMode, setDarkMode] = useState(false);
@@ -46,10 +46,19 @@ export const AppContextProvider = (props) => {
 
 
 
-  // Function to hide the model
-  const hideModel = useCallback( () => {
+  
+  // Handles Model Cancel action
+  const handleCancel = useCallback( () => {
+    if(model.onCancel) model.onCancel();
     setModel(false);
-  } , []);
+  } , [model]);
+
+  // Handles Model Action
+  const handleContinue = useCallback(() => {
+    if(model.onContinue) model.onContinue();
+    setModel(false);
+  }, [model]);
+
 
 
   // Function to show alert and hide it after some time
@@ -60,10 +69,11 @@ export const AppContextProvider = (props) => {
 
 
 
+  // Return the context provider
   return (
-    <AppContext.Provider value={{darkMode: false, toggleDarkMode, setModel, setAlert, hideModel, showAlert}}>
+    <AppContext.Provider value={{darkMode: false, toggleDarkMode, setModel, showAlert}}>
       { model &&
-        <Model content={model} onContinue={model.onContinue || hideModel } onCancel={model.onCancel || hideModel } />
+        <Model content={model} onContinue={ handleContinue } onCancel={ handleCancel } />
       }
       {
         <AlertBox text={alert.text} style={ alert.show ? {bottom: '20px'} : {bottom: '-60px'}} />

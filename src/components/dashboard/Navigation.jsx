@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import IconButton from "../ui/IconButton";
@@ -9,33 +9,48 @@ import Notifications from './Notifications';
 import AppContext from '../../store/AppContext';
 import AuthContext from '../../store/AuthContext';
 
-import UserNavLinks from "../user/UserNavLinks";
-import AdminNavLinks from "../admin/AdminNavLinks";
-import CoordinatorNavLinks from "../coordinator/CoordinatorNavLinks";
-import Model from '../ui/Model';
+
+const UserNavLinks = React.lazy(() => import('../user/UserNavLinks'));
+const AdminNavLinks = React.lazy(() => import('../admin/AdminNavLinks'));
+const CoordinatorNavLinks = React.lazy(() => import('../coordinator/CoordinatorNavLinks'));
+
+
 
 
 const Navigation = (props) => {
-  const [model, setModel] = useState(false);
-  const appContext = useContext(AppContext);
+  const { toggleDarkMode, setModel } = useContext(AppContext);
   const { person, logout } = useContext(AuthContext);
 
   const isMobile = window.innerWidth < 768;
 
-  let navlinks = <UserNavLinks />;
-  if (props.type === "admin") navlinks = <AdminNavLinks />;
-  if (props.type === "coordinator") navlinks = <CoordinatorNavLinks />;
+  const [navlinks, setNavlinks] = useState('');
 
 
+
+  // Effect to set navlinks for header
+  useEffect(() => {
+    if(props.type === 'user') setNavlinks(<UserNavLinks />);
+    else if (props.type === "admin") setNavlinks(<AdminNavLinks />);
+    else setNavlinks(<CoordinatorNavLinks />);
+
+  }, [props]);
+
+
+
+  // Handler for logout button
   const logoutHandler = () => { 
     setModel({
       heading: 'Logout ?',
       text: 'Are you sure you want to logout ?',
+      onContinue : logout
     })
    }
 
 
+
+
   return (<>
+    {/* The top navigation element */}
     <header className="d-flex align-center justify-between bg1 p-fixed p-2 pl-md-3 pr-md-4 w-100vw">
       <div className="d-flex align-center">
         <IconButton icon='menu' onClick={props.toggleNav} />
@@ -43,15 +58,15 @@ const Navigation = (props) => {
       </div>
 
       <aside className="d-flex align-center gap-1 gap-md-2">
-        <IconButton icon='brightness_6' onClick={appContext.toggleDarkMode} />
+        <IconButton icon='brightness_6' onClick={toggleDarkMode} />
         <Notifications />
         <UserIcon text={person.name} />
         <IconButton icon='logout' color='var(--red)' className='d-mob-none' onClick={logoutHandler} />
       </aside>
-
-      { model && <Model content={model} onContinue={logout} onCancel={() => {setModel(false)}} /> }
     </header>
 
+
+    {/* Side navigation element */}
     <nav className={`${props.navVisibility ? 'show' : ''} sideNav bg1 p-fixed pt-4 t-2`} onClick={isMobile ? props.toggleNav : null}>
       <ul>{navlinks}</ul>
 

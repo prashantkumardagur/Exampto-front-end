@@ -4,12 +4,17 @@ import IconHolder from "../ui/IconHolder";
 
 import ExamContext from "../../store/ExamPageContext";
 
+
+
+
 const MainArea = (props) => {
   const { exam, currentQuestion, answers, changeQuestion, markAnswer, flags, toggleFlag} = useContext(ExamContext);
 
   const content = exam.contents[currentQuestion];
   const answer = answers[currentQuestion];
   const flag = flags[currentQuestion];
+
+
 
   return (
     <main className={`${props.navVisibility ? '' : 'cover'} t-2`}>

@@ -9,10 +9,17 @@ import LoadingIcon from "../../components/ui/LoadingIcon";
 
 import { signUpAPI } from "../../api/auth";
 
+
+
+
 const SignUpPage = () => {
+
     const [state, setState] = useState(null);
     const navigate = useNavigate()
 
+
+
+    // handles the signup form submit
     const submitHandler = async (e) => {
         setState({msg:<span><LoadingIcon /> Signing you up</span>, color:"accent"})
         const formData = new FormData(e.target);
@@ -41,7 +48,10 @@ const SignUpPage = () => {
     }
 
 
-    return (<div className="authForm m-auto my-5 p-3 border-2 rounded-2">
+
+
+    return (
+    <div className="authForm m-auto my-5 p-3 border-2 rounded-2">
         <h3 className="mb-2">Sign Up</h3>
         {state && <DataBox content={state.msg} color={state.color} size='small' />}
         <Form onSubmit={submitHandler}>

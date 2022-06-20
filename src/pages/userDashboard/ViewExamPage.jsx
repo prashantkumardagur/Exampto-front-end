@@ -11,6 +11,8 @@ import { getExamAPI, enrollAPI } from "../../api/user";
 import AuthContext from "../../store/AuthContext";
 
 
+
+
 const ViewExamPage = () => {
 
   const { id } = useParams();
@@ -56,12 +58,14 @@ const ViewExamPage = () => {
       action: enrollInExam
     });
   }
+
   const enrollInExam = async () => {
     const response = await enrollAPI(token, id);
     if(response.status !== 'success') { console.log(response.message); return; }
     setIsEnrolled(true);
     setModel(false);
   }
+
 
 
   // Handle Start Exam action
@@ -112,6 +116,7 @@ const ViewExamPage = () => {
   }, [exam, result, isEnrolled]);
 
 
+  
 
   return (<>
     {model && <Model content={model} onContinue={model.action} onCancel={() => {setModel(false)}} />}

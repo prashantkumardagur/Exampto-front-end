@@ -6,6 +6,9 @@ import AuthContext from "../../store/AuthContext";
 import { getAllExamsAPI } from "../../api/coordinator";
 import ExamList from "../../components/dashboard/ExamList";
 
+
+
+
 const MyTestSection = () => {
   const { token } = useContext(AuthContext);
 
@@ -16,23 +19,33 @@ const MyTestSection = () => {
    });
 
 
+  // Effect to get all exams of the coordinator
   useEffect(() => {
     const getAllExams = async () => {
       const response = await getAllExamsAPI(token);
       if (response.status !== 'success') {console.log(response.message); return};
+
       let allExams = response.data;
       let published =[], underway = [], completed = [];
+
       allExams.forEach(exam => {
         if ( exam.startTime > Date.now() ) published.push(exam);
         else if ( exam.meta.resultDeclared ) completed.push(exam);
         else underway.push(exam);
       });
-      setExams({ publishedExams: published, completedExams: completed, underwayExams: underway });      
+
+      setExams({ 
+        publishedExams: published, 
+        completedExams: completed, 
+        underwayExams: underway 
+      });      
     }
 
     getAllExams();
   }, [token]);
 
+
+  
 
   return (<>
     <Section heading="Exams published" >

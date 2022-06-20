@@ -3,8 +3,8 @@ import DataBox from "../ui/DataBox";
 const ExamDetails = (props) => {
   const { exam, sideBtns } = props;
 
+  
   if(!exam) return(<></>);
-
 
   return (<div className="exam-details mb-6">
     <DataBox content={exam.category.map((category, i) => `${i ===0 ? '' : ' / '}${category}`)} />

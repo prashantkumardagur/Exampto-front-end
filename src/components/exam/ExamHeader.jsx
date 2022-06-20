@@ -9,10 +9,15 @@ import IconButton from "../ui/IconButton";
 import UserIcon from '../ui/UserIcon';
 import Timer from './Timer';
 
+
+
+
 const ExamHeader = (props) => {
   const { toggleDarkMode } = useContext(AppContext);
   const { person } = useContext(AuthContext);
   const { initialRemainingTime } = useContext(ExamContext);
+
+  
 
   return (
     <header className="d-flex align-center justify-between bg1 p-fixed p-2 pl-md-3 pr-md-4 w-100vw">

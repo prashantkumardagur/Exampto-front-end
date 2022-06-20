@@ -3,6 +3,9 @@ import { useContext } from "react";
 import ExamContext from "../../store/ExamPageContext";
 import AppContext from "../../store/AppContext";
 
+
+
+
 const ExamNav = (props) => {
 
   const { changeQuestion, currentQuestion, answers, flags, exam, submitExam } = useContext(ExamContext);
@@ -20,6 +23,8 @@ const ExamNav = (props) => {
     })
   }
 
+
+  
 
   return (   
     <nav className={`${props.navVisibility ? 'show' : ''} sideNav bg1 p-fixed pt-4 t-2 z-5`} onClick={isMobile ? props.toggleNav : null}>

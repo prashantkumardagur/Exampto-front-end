@@ -11,6 +11,9 @@ import ViewQuestion from '../components/examEditor/ViewQuestion';
 
 import { EditorContextProvider } from '../store/EditorContext';
 
+
+
+
 const EditorPage = () => {
 
 	const [page, setPage] = useState(1);
@@ -18,12 +21,15 @@ const EditorPage = () => {
 
 	const toggleNav = useCallback(() => { setNavVisibility(!navVisibility) }, [navVisibility]);
 
+
+	// Effect to hide navbar on mobile or small screens
   useEffect(() => {
     if(window.innerWidth < 768) setNavVisibility(false);
   }, []);
 
 
 
+	// Sets current page
 	let mainPage = 1;
 	switch(page) {
 		case 1: mainPage = <ExamDetails />; break;
@@ -34,6 +40,7 @@ const EditorPage = () => {
 	}
 
 
+	
 
 	return (<EditorContextProvider setPage={setPage} page={page}>
 		<EditorHeader toggleNav={toggleNav} />
