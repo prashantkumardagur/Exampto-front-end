@@ -6,7 +6,7 @@ const ExamDetails = (props) => {
   
   if(!exam) return(<></>);
 
-  return (<div className="exam-details mb-6">
+  return (<div className="exam-details mb-7">
     <DataBox content={exam.category.map((category, i) => `${i ===0 ? '' : ' / '}${category}`)} />
     <DataBox icon='group' content={exam.meta.studentsEnrolled} className='enroll-count' />
     <h2 className="my-3">{exam.name}</h2>

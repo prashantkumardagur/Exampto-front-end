@@ -6,7 +6,7 @@ import FileAccess from '../dashboard/FileAccess';
 import DataItem from '../ui/DataItem';
 import PageLoader from '../../components/ui/PageLoader';
 
-import { getResultAPI } from '../../api/user';
+import { getResultAPI, downloadSolutionAPI } from '../../api/user';
 import AuthContext from '../../store/AuthContext';
 import ContentList from '../dashboard/ContentList';
 
@@ -44,6 +44,17 @@ const ViewResults = (props) => {
 
 
 
+  let size = 0;
+  let unit = 'KB';
+  if(exam && exam.solutions > 0){
+    size = exam.solutions / 1024;
+    if(size > 100) { size = size / 1024; unit = 'MB'; }
+
+    size = size.toFixed(2) + ' ' + unit;
+  }
+
+
+
 
   if(isLoading) return <PageLoader />;
 
@@ -55,7 +66,10 @@ const ViewResults = (props) => {
         <DataItem heading='Rank' value='0' />
         <DataItem heading='Percentile' value='0' />
       </div>
-      <FileAccess text='Solution PDF (25.6 MB)' icon='download' className='mt-4' btnText='Download' />
+      { exam.solutions > 0 
+        ? <FileAccess text={`Solution PDF (${size})`} className='mt-4' api={downloadSolutionAPI} data={exam._id} fileName='solution.pdf' />
+        : <FileAccess text='No Solution PDF available' className='mt-4' disabled />
+      }
     </Section>
 
     <Section heading='Your Responses and Answers'>

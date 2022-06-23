@@ -7,7 +7,7 @@ const Form = (props) => {
     props.onSubmit(e);
   }
 
-  return (<form onSubmit={submitHandler} onChange={props.onChange}>
+  return (<form onSubmit={submitHandler} onChange={props.onChange} className={props.className}>
     {props.children}
   </form>);
 }

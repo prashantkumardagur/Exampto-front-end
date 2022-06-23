@@ -80,6 +80,21 @@
 /*=====================================================================================================*/
 
 
+.people-list .d-grid{grid-template-columns: 50px 2fr 3fr; gap: 20px; border-radius: 5px; padding: 5px;}
+.people-list .d-grid:nth-of-type(1):hover{ background-color: transparent; }
+.people-list .d-grid:hover{ background-color: var(--light-accent-bg); }
+.t-head{font-weight: 500;}
+
+
+.result-list .d-grid{grid-template-columns: 1fr 100px 100px 100px; gap: 20px; 
+    border-radius: 5px; padding: 8px; color: var(--txt1); border-bottom: 1px solid var(--shadow);}
+.result-list .t-head:hover{ background-color: transparent !important; color: var(--txt1) !important; }
+.result-list .d-grid:hover{ background-color: var(--accent2); color: var(--black); } 
+
+
+/*=====================================================================================================*/
+
+
 .authForm{max-width: 400px;}
 
 
@@ -88,7 +103,13 @@
     {max-width: calc(100% - 100px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 .file-access button, .copy-to-clipboard button
     {background-color: var(--accent1); color: white; border: none;}
+.file-access button:disabled{background-color: var(--shadow); cursor: default;}
 
+
+.file-upload{ border-radius: 6px;}
+.file-upload .btn{ border-radius: 0;}
+.file-upload .btn:disabled{ background-color: var(--shadow) !important;}
+.file-upload p{ width: calc(100% - 100px); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
 /*=====================================================================================================*/
 

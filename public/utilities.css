@@ -196,6 +196,7 @@ button{font-family: var(--font2); font-weight: 600; color: var(--txt1); cursor: 
 .cursor-zoom-out{cursor:zoom-out;}
 .cursor-grab{cursor:grab;}
 .cursor-grabbing{cursor:grabbing;}
+.cursor-copy{cursor: copy}
 
 
 

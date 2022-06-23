@@ -66,7 +66,7 @@ main{
 main.cover{
   margin-left: 30px;
 }
-.userIcon{ padding-top: 2px; padding-bottom: 2px;}
+.userIcon{ padding-top: 2px; padding-bottom: 2px; white-space: nowrap;}
 .userIcon:hover{background-color: var(--bg3);}
 .userIcon:focus{outline: 2px solid var(--txt1);}
 
@@ -79,6 +79,10 @@ main.cover{
 .notificationCard.show{
   right: 0;
 }
+
+
+.search-bar{ width: 500px; height: 40px; background-color: var(--bg3); max-width: 35vw; }
+.search-bar input{ padding: 0; background-color: transparent; border: none; outline: none;}
 
 
 

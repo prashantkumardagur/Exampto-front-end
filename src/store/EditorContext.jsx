@@ -41,6 +41,7 @@ export const EditorContextProvider = (props) => {
     useEffect(() => {
 
       const getExamData = async () => {
+        if(token === null){ return; }
         let response = await getExamAPI(token, id);
         if(response.status !== 'success') { console.log(response.message); navigate('/coordinator'); return; }
 

@@ -1,4 +1,5 @@
-const hostUrl = "http://localhost:8080";
+export const hostUrl = "http://localhost:8080";
+
 
 // Function to run APIs
 const runAPI = async (url, token='', body={}) => {

@@ -1,4 +1,4 @@
-import runAPI from "./runAPI";
+import runAPI, { hostUrl } from "./runAPI";
 
 
 // Gets the exam data from the server
@@ -29,4 +29,28 @@ export const updateQuestionAPI = async (token, id, index, content, answer) => {
 // Delete a question from the exam
 export const deleteQuestionAPI = async (token, id, index) => {
   return await runAPI("/editor/delete-question", token, { id, index });
+}
+
+
+
+// Uploads a solution pdf to the server
+export const uploadSolutionAPI = async (token, examId, file) => {
+  const formData = new FormData();
+  formData.append("examId", examId);
+  formData.append("solutionFile", file);
+  let response = await fetch(`${hostUrl}/editor/upload-solution/`, { 
+    method: 'POST', 
+    headers: { "Authorization": `Bearer ${token}` },
+    body: formData,
+  });
+  return await response.json();
+}
+
+// Downloads the solution pdf from the server
+export const downloadSolutionAPI = async (token, examId) => {
+  let response = await fetch(`${hostUrl}/editor/download-solution/${examId}`, { 
+    method: 'POST',
+    headers: { "Authorization": `Bearer ${token}` },
+  });
+  return await response.blob();
 }

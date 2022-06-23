@@ -6,12 +6,12 @@ import Form from "../ui/Forms/Form";
 import InputField from "../ui/Forms/InputField";
 import SelectField from "../ui/Forms/SelectField";
 import LoadingIcon from "../ui/LoadingIcon";
-import FileAccess from "../dashboard/FileAccess";
+import FileUpload from "../dashboard/FileUpload";
 import CopyToClipboard from "../ui/CopyToClipboard";
 
 import EditorContext from "../../store/EditorContext";
 import AppContext from "../../store/AppContext";
-import { updateExamDetailsAPI, publishExamAPI } from "../../api/editor";
+import { updateExamDetailsAPI, publishExamAPI, uploadSolutionAPI } from "../../api/editor";
 
 
 
@@ -127,8 +127,9 @@ const ExamDetails = () => {
       <InputField label='Negative Mark' id='examNegativeMark' name='negative' type='number' value={exam.marking.negative} min='0' max='1000' />
     </div>
 
-    <h6 className="ch accent1 mt-5">Exam Solution PDF</h6>
-    <FileAccess text='Upload solution file' btnText='Upload' icon='upload' className='mt-3' />
+    <h6 className="ch accent1 mt-5 mb-2">Exam Solution PDF</h6>
+    {exam.solutions > 0 ? <p className="mb-1 fs-2">Solution file already uploaded.</p> : null}
+    <FileUpload examId={exam._id} api={uploadSolutionAPI} />
 
     <h6 className="ch accent1 mt-5">Custom Controls</h6>
     <div className="grid-md-2 gap-3">
