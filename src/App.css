@@ -4,7 +4,9 @@
   border-bottom: 2px solid var(--shadow);
   background-color: var(--bg1);
 }
-.navbar a:hover{text-decoration: underline;}
+.navbar a:hover, .nav-links button:hover{text-decoration: underline;}
+.nav-links button{ background-color: transparent; border: none; color: var(--accent1); font-family: var(--font1);
+      font-weight: 400; font-size: 16px;}
 
 
 header{

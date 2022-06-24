@@ -1,4 +1,4 @@
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext, useState, useCallback } from "react";
 import { useParams, useNavigate, Routes, Route } from "react-router-dom";
 
 import ExamDetails from "../../components/dashboard/ExamDetails";
@@ -50,39 +50,39 @@ const ViewExamPage = () => {
 
 
 
+  const enrollInExam = useCallback( async () => {
+    const response = await enrollAPI(token, id);
+    if(response.status !== 'success') { console.log(response.message); return; }
+    setIsEnrolled(true);
+    setModel(false);
+  }, [id, token]);
   // Handle Enroll action
-  const enrollHandler = () => {
+  const enrollHandler = useCallback(() => {
     setModel({
       heading: "Enroll in Exam?",
       text: "Are you sure you want to enroll in this exam?",
       action: enrollInExam
     });
-  }
-
-  const enrollInExam = async () => {
-    const response = await enrollAPI(token, id);
-    if(response.status !== 'success') { console.log(response.message); return; }
-    setIsEnrolled(true);
-    setModel(false);
-  }
+  }, [setModel, enrollInExam]);
 
 
 
+  
+  const startExam = useCallback(() => { navigate(`/attemptexam/${id}`); }, [navigate, id]);
   // Handle Start Exam action
-  const startHandler = () => {
+  const startHandler = useCallback(() => {
     setModel({
       heading: "Start Exam?",
       text: "Are you sure you want to start this exam?",
       action: startExam
     })
-  }
-  const startExam = () => { navigate(`/attemptexam/${id}`); }
+  }, [setModel, startExam]);
 
 
   // Show results
-  const showResults = () => {
+  const showResults = useCallback( () => {
     navigate('view-results');
-  }
+  }, [navigate]);
 
 
 
@@ -113,7 +113,7 @@ const ViewExamPage = () => {
       else setSideBtns(completed);
     }    
 
-  }, [exam, result, isEnrolled]);
+  }, [exam, result, isEnrolled, showResults, startHandler, enrollHandler]);
 
 
   

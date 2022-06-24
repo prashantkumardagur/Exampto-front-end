@@ -27,7 +27,7 @@ const NavBar = () => {
 			<NavLink to="/">Home</NavLink>
 			{authContext.isLoggedIn ? <>
 				<NavLink to={dashboardLink}>Dashboard</NavLink>
-				<a onClick={authContext.logout} className='cursor-pointer'>Logout</a>
+				<button onClick={authContext.logout} className='cursor-pointer'>Logout</button>
 			</> : <>
 				<NavLink to="/auth/login">Login</NavLink>
 				<NavLink to="/auth/signup">SignUp</NavLink>

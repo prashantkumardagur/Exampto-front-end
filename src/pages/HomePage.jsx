@@ -12,6 +12,15 @@ const HomePage = () => {
 	const { token } = useContext(AuthContext);
 	const { setModel, showAlert } = useContext(AppContext);
 
+
+
+	
+
+	// Example alert handler
+	const handleAlert = () => {
+		showAlert("Alert Content lorem ipsum des content.");
+	}
+
 	// Example model handler
 	const handleModel = () => {
 		setModel({
@@ -25,13 +34,10 @@ const HomePage = () => {
 					showAlert('Error downloading solution.');
 				}
 			},
+			onCancel : handleAlert
 		})
 	}
 
-	// Example alert handler
-	const handleAlert = () => {
-		showAlert("Alert Content lorem ipsum des content.");
-	}
 
 
 
