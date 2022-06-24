@@ -1,10 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import GlobalLoader from "../components/ui/GlobalLoader";
 
 import AuthContext from "./AuthContext";
-import { initializeExamAPI, markAnswerAPI, submitExamAPI } from "../api/exam";
+import AppContext from "./AppContext";
+import { initializeExamAPI, markAnswerAPI, submitExamAPI, countDisconnectionAPI } from "../api/exam";
 
 
 // EditorContext definition
@@ -32,6 +33,7 @@ export const ExamContextProvider = (props) => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { token } = useContext(AuthContext);
+  const { showAlert } = useContext(AppContext);
 
 
   const [isLoading, setIsLoading] = useState(true);
@@ -47,6 +49,7 @@ export const ExamContextProvider = (props) => {
 
   // Effect to initialize exam
   useEffect(() => {
+    if(!token) return;
 
     const initializeExam = async () => {
       let response = await initializeExamAPI(token, id);
@@ -65,6 +68,40 @@ export const ExamContextProvider = (props) => {
     initializeExam();
 
   }, [id, token, navigate]);
+
+
+
+
+  // Handles window blur event
+  const handleWindowBlur = useCallback(async () => {
+    if(!token) return;
+    if(!resultId) return;
+
+    const response = await countDisconnectionAPI(token, resultId);
+    console.log(response.message);
+
+  }, [resultId, token]);
+
+  // Handles window focus event
+  const handleWindowFocus = useCallback(() => {
+    console.log("Window focus event");
+    showAlert("Disconnection counted. Please do not change tab or minimize window. Otherwise, exam will be terminated.");
+  }, [showAlert]);
+
+
+  // Effect to hide navbar on mobile or small screens
+  useEffect(() => {
+    window.addEventListener("blur", handleWindowBlur);
+    window.addEventListener("focus", handleWindowFocus);
+
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("blur", handleWindowBlur);
+      window.removeEventListener("focus", handleWindowFocus);
+    }
+  }, [handleWindowBlur, handleWindowFocus]);
+
 
 
 

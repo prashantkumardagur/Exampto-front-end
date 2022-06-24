@@ -16,6 +16,8 @@ const ExamPage = () => {
   const toggleNav = useCallback(() => { setNavVisibility(!navVisibility) }, [navVisibility]);
 
 
+
+
   // Effect to hide navbar on mobile or small screens
   useEffect(() => {
     if(window.innerWidth < 768) setNavVisibility(false);

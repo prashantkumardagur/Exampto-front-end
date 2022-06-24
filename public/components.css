@@ -1,6 +1,6 @@
 .alert-box{ background-color: var(--accent1); color: #fff; font-weight: 500;
   width: fit-content; max-width: 94vw; padding: 10px 20px; border-radius: 5px; transition: 0.2s;
-  position: fixed; bottom: -60px; left: 50vw; transform: translateX(-50%); z-index: 999;
+  position: fixed; bottom: -60px; left: 50vw; transform: translateX(-50%); z-index: 99999;
 }
 
 /* ====================================================================================================*/

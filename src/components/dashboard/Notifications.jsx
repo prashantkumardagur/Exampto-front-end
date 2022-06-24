@@ -11,6 +11,12 @@ const NotificationCard = (props) => {
         Notifications 
         <IconButton icon='close' fontSize='24px' onClick={props.close} />
       </h3>
+      <div className="notification-list">
+        <div className="no-notification text-center">
+          <img src="/svg/notify.svg" alt="" />
+          <p className="fs-2 mt-3 txt2">No notification at this moment.</p>
+        </div>
+      </div>
     </div>
   )
 }
