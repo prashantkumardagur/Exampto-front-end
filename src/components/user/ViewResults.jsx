@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Section from '../../components/dashboard/Section';
-import FileAccess from '../dashboard/FileAccess';
+import FileAccess from '../dashboard/Fileaccess';
 import DataItem from '../ui/DataItem';
 import PageLoader from '../../components/ui/PageLoader';
 
