@@ -12,6 +12,7 @@ import ExamList from "../../components/dashboard/ExamList";
 const MyTestSection = () => {
   const { token } = useContext(AuthContext);
 
+  const [loading, setLoading] = useState(true);
   const [exams, setExams] = useState({ 
     publishedExams: [],
     completedExams: [],
@@ -38,7 +39,8 @@ const MyTestSection = () => {
         publishedExams: published, 
         completedExams: completed, 
         underwayExams: underway 
-      });      
+      });
+      setLoading(false);     
     }
 
     getAllExams();
@@ -49,13 +51,13 @@ const MyTestSection = () => {
 
   return (<>
     <Section heading="Exams published" >
-      <ExamList list={exams.publishedExams} linkTo={'/coordinator/viewexam/'} />
+      <ExamList list={exams.publishedExams} linkTo={'/coordinator/viewexam/'} loading={loading} />
     </Section>
     <Section heading="Exams underway" >
-      <ExamList list={exams.underwayExams} linkTo={'/coordinator/viewexam/'} />
+      <ExamList list={exams.underwayExams} linkTo={'/coordinator/viewexam/'} loading={loading} />
     </Section>
     <Section heading="Exams completed" >
-      <ExamList list={exams.completedExams} linkTo={'/coordinator/viewexam/'} />
+      <ExamList list={exams.completedExams} linkTo={'/coordinator/viewexam/'} loading={loading} />
     </Section>
   </>);
 }

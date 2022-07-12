@@ -8,7 +8,7 @@ const Model = (props) => {
           <h6>{props.content.heading}</h6>
           <p>{props.content.text}</p>
           <button className="btn primary small" onClick={props.onContinue}>Continue</button>
-          <button className="btn secondary ml-2" onClick={props.onCancel}>Cancel</button>
+          <button className="btn secondary small ml-2" onClick={props.onCancel}>Cancel</button>
         </div>
       </div>, document.getElementById('model-root') )
   }</>);

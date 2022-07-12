@@ -64,7 +64,12 @@ export const AppContextProvider = (props) => {
   // Function to show alert and hide it after some time
   const showAlert = (text) => {
     setAlert({text, show: true});
-    setTimeout(() => { setAlert({text, show: false}); }, 4000);
+    let alertTimeout = setTimeout(() => { setAlert({text, show: false}); }, 4000);
+
+    return () => {
+      clearTimeout(alertTimeout);
+      setAlert({text, show: false});
+    }
   }
 
 

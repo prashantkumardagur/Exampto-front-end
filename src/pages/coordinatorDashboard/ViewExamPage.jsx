@@ -35,7 +35,6 @@ const ViewExamPage = () => {
 
 
 
-
   // declare the results of the exam
   const declareResults = useCallback( async () => {
     const response = await declareResultsAPI(token, id);
@@ -46,8 +45,8 @@ const ViewExamPage = () => {
         ...prevState,
         meta: {
           ...prevState.meta,
-          resultsDeclared: true,
-          resultsDeclaredOn: Date.now()
+          resultDeclared: true,
+          resultDeclaredOn: Date.now()
         }
     } }) 
 

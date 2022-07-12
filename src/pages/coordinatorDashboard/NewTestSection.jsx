@@ -21,6 +21,7 @@ const NewTestSection = () => {
 
   const [btnSideText, setBtnSideText] = useState("Initialize a blank test and continue in ExamEditor.");
   const [unpublishedExams, setUnpublishedExams] = useState([]);
+  const [loading, setLoading] = useState(true);
 
 
 
@@ -31,6 +32,7 @@ const NewTestSection = () => {
       if (response.status !== 'success') { console.log(response.message); return };
 
       setUnpublishedExams(response.data);
+      setLoading(false);
     }
 
     getUnpublishedExams();
@@ -65,7 +67,7 @@ const NewTestSection = () => {
     <p className="d-inline ml-2">{btnSideText}</p>
 
     <Section heading='Exams under creation'>
-      <ExamList list={unpublishedExams} linkTo='/exameditor/' />
+      <ExamList list={unpublishedExams} linkTo='/exameditor/' loading={loading} />
     </Section>
   </>);
 }

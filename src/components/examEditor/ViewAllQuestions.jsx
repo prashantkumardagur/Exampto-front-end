@@ -9,7 +9,6 @@ import EditorContext from "../../store/EditorContext";
 const ViewAllQuestions = () => {
 
   const { exam } = useContext(EditorContext);
-
   
   return (<>
   <h2 className="mb-5">View All Questions</h2>

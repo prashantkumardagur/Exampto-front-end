@@ -3,6 +3,7 @@ import { useContext } from "react";
 import IconHolder from "../ui/IconHolder";
 
 import ExamContext from "../../store/ExamPageContext";
+import { hostUrl } from "../../api/runAPI";
 
 
 
@@ -19,10 +20,14 @@ const MainArea = (props) => {
   return (
     <main className={`${props.navVisibility ? '' : 'cover'} t-2`}>
       <h5 className="ch txt2 font-1">Question {currentQuestion+1}</h5>
-      <p className="py-2">{content.question}</p>
+      <p className="py-2">{content.question.text}</p>
+      {content.question.image !== '' &&  <img src={`${hostUrl}/images/${content.question.image}`} alt='question' className="option-image mb-4" />}
       <div className="options pt-2 pb-3">
         {content.options.map((option, i) => 
-          <div key={i} className={`option ${answer === i+1 ? 'active' : ''}`} onClick={() => {markAnswer(i+1)}}>{option}</div> 
+          <div key={i} className={`option ${answer === i+1 ? 'active' : ''}`} onClick={() => {markAnswer(i+1)}}>
+            { option.kind === 'text' ? option.text : 
+            <img src={`${hostUrl}/images/${option.text}`} alt={`Option${i+1}`} className='option-image' />}
+          </div> 
         )}
       </div>
 

@@ -1,5 +1,7 @@
 import React from "react";
 
+import { hostUrl } from "../../api/runAPI";
+
 
 // Content Item Component
 const ContentItem = (props) => {
@@ -8,12 +10,16 @@ const ContentItem = (props) => {
   return (
   <div className="contentItem">
     <div className="ch font-1">Question {props.num}</div>
-    <p className="question">{question}</p>
+    <p className="question">{question.text}</p>
+    { question.image !== '' && <img src={`${hostUrl}/images/${question.image}`} alt="Question" className="option-image" /> }
     {options.map((option, index) => 
       <div 
           key={index} 
           className={`option ${answer === index+1 ? 'correct' : ''} ${response === index+1 ? 'selected' : ''}`}
-      >{option}</div> 
+      >{option.kind === 'text' ? 
+          option.text : 
+          <img src={`${hostUrl}/images/${option.text}`} alt={`option${index+1}`} className='option-image' />}
+      </div> 
     )}
   </div>);
 }

@@ -33,12 +33,13 @@ export const ExamContextProvider = (props) => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { token } = useContext(AuthContext);
-  const { showAlert } = useContext(AppContext);
+  const { showAlert, setModel } = useContext(AppContext);
 
 
   const [isLoading, setIsLoading] = useState(true);
 
   const [exam, setExam] = useState({});
+  const [disconnections, setDisconnections] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [flags, setFlags] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -72,21 +73,41 @@ export const ExamContextProvider = (props) => {
 
 
 
+
+  // Submits exam
+  const submitExam = useCallback(async () => {
+    const response = await submitExamAPI(token, resultId);
+    if(response.status !== 'success') { console.log(response.message); return; }
+
+    navigate('/user/exams');
+  }, [token, resultId, navigate]);
+
+
   // Handles window blur event
   const handleWindowBlur = useCallback(async () => {
     if(!token) return;
     if(!resultId) return;
 
     const response = await countDisconnectionAPI(token, resultId);
+    setDisconnections(response.data);
     console.log(response.message);
 
   }, [resultId, token]);
 
   // Handles window focus event
   const handleWindowFocus = useCallback(() => {
-    console.log("Window focus event");
-    showAlert("Disconnection counted. Please do not change tab or minimize window. Otherwise, exam will be terminated.");
-  }, [showAlert]);
+    if(disconnections < 4){
+      showAlert("Disconnection counted. Please do not change tab or minimize window. Otherwise, exam will be terminated.");
+    } else if(disconnections < 6){
+      setModel({
+        heading: "Disconnection limit reached",
+        text: "You have reached the disconnection limit. Please do not change tab or minimize window. Otherwise, exam will be terminated.",
+      })
+    } else {
+      submitExam();
+    }
+  }, [showAlert, submitExam, disconnections, setModel]);
+
 
 
   // Effect to hide navbar on mobile or small screens
@@ -129,15 +150,6 @@ export const ExamContextProvider = (props) => {
   const changeQuestion = (n) => {
     if(n < 0 || n >= flags.length) return;
     setCurrentQuestion(n);
-  }
-
-
-  // Submits exam
-  const submitExam = async () => {
-    const response = await submitExamAPI(token, resultId);
-    if(response.status !== 'success') { console.log(response.message); return; }
-
-    navigate('/user/exams');
   }
 
 

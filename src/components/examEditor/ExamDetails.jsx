@@ -11,7 +11,7 @@ import CopyToClipboard from "../ui/CopyToClipboard";
 
 import EditorContext from "../../store/EditorContext";
 import AppContext from "../../store/AppContext";
-import { updateExamDetailsAPI, publishExamAPI, uploadSolutionAPI } from "../../api/editor";
+import { updateExamDetailsAPI, publishExamAPI, uploadSolutionAPI, deleteExamAPI } from "../../api/editor";
 
 
 
@@ -81,7 +81,15 @@ const ExamDetails = () => {
     setModel({
       heading: "Delete Exam?",
       text: "Are you sure you want to delete this exam? This is a irreversible action.",
+      onContinue: deleteExam,
     })
+  }
+
+  // Deletes the exam
+  const deleteExam = async () => {
+    const response = await deleteExamAPI( token, exam._id );
+    if(response.status !== 'success'){ console.log(response.message); return; }
+    navigate('/coordinator/mytests');
   }
 
 

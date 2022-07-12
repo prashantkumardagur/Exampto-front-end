@@ -31,7 +31,10 @@ export const downloadSolutionAPI = async (token, examId) => {
 
 
 
-
+// Gets all available practice exams
+export const getPracticeExamsAPI = (token) => {
+  return runAPI('/user/get-practice-exams', token);
+}
 
 
 // Gets all exams for a user

@@ -1,0 +1,28 @@
+.headings{ margin-bottom: 80px; position: relative; width: fit-content;}
+.headings::before{ content: ""; display: block; height: 10px; width: 40%; background: #000; 
+  position: absolute; bottom: -20px; background-color: var(--accent1); border-radius: 10px; }
+
+.hero-section{ height: 100vh; width: 100%; }
+.hero-section h1{ margin-top: 10vh;}
+.hero-section img{ margin-top: 10vh; width: 80%;}
+
+.home-features .d-grid{ grid-template-columns: 1fr 1fr 1fr 1fr;}
+.home-features p{font-size: 18px; color: var(--txt2);}
+.home-features img{margin:auto; margin-bottom: 20px; max-height: 160px;}
+
+.footer-links a{color: var(--txt2); line-height: 180%;}
+.copyright-area{background-color: var(--shadow);}
+
+
+
+.content-page{grid-template-columns: 250px 1fr; column-gap: 60px; position: relative;}
+.content-page aside{margin-top: 50px; position: sticky; position: -webkit-sticky; top: 100px; height: fit-content; }
+.content-page aside a{ color: var(--txt2); padding: 2px 0; display: block;}
+.content-page aside a:hover{ color: var(--txt1); text-decoration: underline;}
+.content-page aside a.is-active{ color: var(--accent1);}
+
+.info-div h1{margin: 50px 0 0px;}
+.info-div h2{padding: 80px 0 25px;}
+.info-div h4{padding: 30px 0 15px;}
+.info-div p{margin-bottom: 10px; text-align: justify;}
+.info-div ul{list-style: disc; margin-left: 1em; margin-bottom: 15px;}

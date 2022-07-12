@@ -31,6 +31,11 @@ export const deleteQuestionAPI = async (token, id, index) => {
   return await runAPI("/editor/delete-question", token, { id, index });
 }
 
+// Deletes the exam from the server
+export const deleteExamAPI = async (token, id) => {
+  return await runAPI("/editor/delete-exam", token, { id });
+}
+
 
 
 // Uploads a solution pdf to the server
@@ -46,11 +51,20 @@ export const uploadSolutionAPI = async (token, examId, file) => {
   return await response.json();
 }
 
-// Downloads the solution pdf from the server
-export const downloadSolutionAPI = async (token, examId) => {
-  let response = await fetch(`${hostUrl}/editor/download-solution/${examId}`, { 
-    method: 'POST',
+// Uploads a image to the server
+export const uploadImageAPI = async (token, file) => {
+  const formData = new FormData();
+  formData.append("imageFile", file);
+  let response = await fetch(`${hostUrl}/editor/upload-image/`, { 
+    method: 'POST', 
     headers: { "Authorization": `Bearer ${token}` },
+    body: formData,
   });
-  return await response.blob();
+  return await response.json();
+}
+
+
+// Deletes a image from the server
+export const deleteImageAPI = async (token, filename) => {
+  return await runAPI("/editor/delete-image", token, { filename });
 }

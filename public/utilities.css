@@ -60,7 +60,7 @@ heading size variations with breakpoints
 /* ===== Global Styles =============================================================================== */
 
 *{box-sizing: border-box; margin: 0; padding: 0;}
-
+html{ scroll-behavior: smooth;}
 body{font-family: var(--font1), sans-serif; line-height: 1.4; color: var(--txt1); background-color: var(--bg1);}
 
 h1, h2, h3, h4, h5, h6, .ch, .h1, .h2, .h3, .h4, .h5, .h6{

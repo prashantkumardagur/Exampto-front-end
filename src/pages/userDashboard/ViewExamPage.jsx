@@ -4,11 +4,11 @@ import { useParams, useNavigate, Routes, Route } from "react-router-dom";
 import ExamDetails from "../../components/dashboard/ExamDetails";
 import ExamInstructions from "../../components/dashboard/ExamInstructions";
 import DataBox from "../../components/ui/DataBox";
-import Model from "../../components/ui/Model";
 import ViewResults from "../../components/user/ViewResults";
 
 import { getExamAPI, enrollAPI } from "../../api/user";
 import AuthContext from "../../store/AuthContext";
+import AppContext from "../../store/AppContext";
 
 
 
@@ -17,9 +17,9 @@ const ViewExamPage = () => {
 
   const { id } = useParams();
   const { token } = useContext(AuthContext);
+  const { setModel } = useContext(AppContext);
   const navigate = useNavigate();
 
-  const [model, setModel] = useState(false);
   const [isEnrolled, setIsEnrolled] = useState(false);
   const [exam, setExam] = useState(null);
   const [result, setResult] = useState(null);
@@ -54,14 +54,13 @@ const ViewExamPage = () => {
     const response = await enrollAPI(token, id);
     if(response.status !== 'success') { console.log(response.message); return; }
     setIsEnrolled(true);
-    setModel(false);
   }, [id, token]);
   // Handle Enroll action
   const enrollHandler = useCallback(() => {
     setModel({
       heading: "Enroll in Exam?",
       text: "Are you sure you want to enroll in this exam?",
-      action: enrollInExam
+      onContinue: enrollInExam
     });
   }, [setModel, enrollInExam]);
 
@@ -74,7 +73,7 @@ const ViewExamPage = () => {
     setModel({
       heading: "Start Exam?",
       text: "Are you sure you want to start this exam?",
-      action: startExam
+      onContinue: startExam
     })
   }, [setModel, startExam]);
 
@@ -113,13 +112,34 @@ const ViewExamPage = () => {
       else setSideBtns(completed);
     }    
 
+
+
+    // If result exists
+        // Check if user can continue ( show continue button )
+        // Check if result is of type practice ( show results button )
+        // Check if result is declared ( show results button )
+        // Check if result is not declared ( show results pending )
+
+    // If student is enrolled in this exam
+        // Check if exam is not started ( show enrolled status )
+        // Check if exam is started and not exceeded lastStartTime ( show start button )
+        // Check if lastStartTime is exceeded and result is not declared ( Show time exceeded status )
+        // Check if results are declared and is available for practice ( show practice test option )
+        // Check if results are declared and is not available for practice ( show time exceed )
+
+    // Not enrolled in this exam
+        // Check if exam is started ( if not show enroll button )
+        // If exam is started and results are not declared ( show Can't Enroll status)
+        // If results are declared and is available for practice ( show practice exam button )
+        // If results are declared and is not available for practice ( show can't enroll status )
+
+
   }, [exam, result, isEnrolled, showResults, startHandler, enrollHandler]);
 
 
   
 
   return (<>
-    {model && <Model content={model} onContinue={model.action} onCancel={() => {setModel(false)}} />}
     <ExamDetails exam={exam} sideBtns={sideBtns} />
     <Routes>
       <Route path="" element={<ExamInstructions />} />

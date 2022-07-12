@@ -22,7 +22,7 @@ const NavBar = () => {
 
 	
 	return (<nav className='navbar w-100vw p-fixed d-flex align-center px-5vw'>
-		<div className="leadingName h4">Exampto</div>
+		<div className="leadingName h3">Exampto</div>
 		<ul className="nav-links ml-auto d-flex gap-2">
 			<NavLink to="/">Home</NavLink>
 			{authContext.isLoggedIn ? <>

@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import DataBox from '../ui/DataBox';
+import PageLoader from '../ui/PageLoader';
 
 
 
@@ -24,8 +25,10 @@ const ExamCard = (props) => {
 
 // Grid component for exam cards
 const ExamList = (props) => {
-  const { list, linkTo } = props;
+  const { list, linkTo, loading } = props;
 
+
+  if(loading) return <PageLoader />;
 
   if(list.length === 0) return <div className='no-exams'>No exams in this category.</div>
 

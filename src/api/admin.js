@@ -15,3 +15,8 @@ export const getUsersAPI = async (token) => {
 export const createCoordinatorAPI = async (token, data) => {
   return await runAPI("/admin/create-new-coordinator", token, data);
 }
+
+// Toggle ban status of a person
+export const toggleBanAPI = async (token, id) => {
+  return await runAPI("/admin/toggle-ban", token, {id});
+}

@@ -14,4 +14,9 @@ const runAPI = async (url, token='', body={}) => {
   }).then(res => res.json());
 }
 
+// Search for exams
+export const searchExams = async (token, role, search) => {
+  return await runAPI(`/${role}/search-exams`, token, {search});
+}
+
 export default runAPI;
