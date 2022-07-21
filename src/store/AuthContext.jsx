@@ -8,6 +8,7 @@ import { refreshTokenAPI, loginAPI } from "../api/auth";
 const AuthContext = React.createContext({
   isLoggedIn: false,
   person: {},
+  updatePerson: () => {},
   role: '',
   login: () => {},
   logout: () => {},
@@ -61,6 +62,12 @@ export const AuthContextProvider = (props) => {
   }, []);
 
 
+  // Function to update person on profile update
+  const updatePerson = (data) => {
+    setPerson((prev) => ({...prev, name: data.name, gender: data.gender, phone: data.phone}));
+  }
+
+
 
   // Function to login
   const login = async (credentials) => {
@@ -96,6 +103,7 @@ export const AuthContextProvider = (props) => {
     isLoggedIn: !!token,
     token,
     person,
+    updatePerson,
     role: person.role,
     login,
     logout,

@@ -11,6 +11,7 @@ import { initializeExamAPI, markAnswerAPI, submitExamAPI, countDisconnectionAPI 
 // EditorContext definition
 const ExamContext = React.createContext({
   exam : {},
+  examType : '',
   token : null,
   resultId : null,
   currentQuestion : 0,
@@ -39,6 +40,7 @@ export const ExamContextProvider = (props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   const [exam, setExam] = useState({});
+  const [examType, setExamType] = useState('Live');
   const [disconnections, setDisconnections] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [flags, setFlags] = useState([]);
@@ -56,8 +58,9 @@ export const ExamContextProvider = (props) => {
       let response = await initializeExamAPI(token, id);
       if(response.status !== 'success') { console.log(response.message); navigate('/user/exams'); return; }
 
-      const { exam, responses, startedOn, resultId } = response.data;
+      const { exam, responses, startedOn, resultId, resultExamType } = response.data;
       setExam(exam);
+      setExamType(resultExamType);
       setAnswers(responses);
       setResultId(resultId);
       setFlags(new Array(exam.contents.length).fill(false));
@@ -161,6 +164,7 @@ export const ExamContextProvider = (props) => {
     <ExamContext.Provider 
             value={{ 
               exam,
+              examType,
               token,
               resultId,
               currentQuestion,

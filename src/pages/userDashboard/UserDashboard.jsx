@@ -9,6 +9,7 @@ const PracticeSection = React.lazy(() => import('./PracticeSection'));
 const ResultSection = React.lazy(() => import('./ResultSection'));
 const WalletSection = React.lazy(() => import('./WalletSection'));
 const ViewExamPage = React.lazy(() => import('./ViewExamPage'));
+const ProfilePage = React.lazy(() => import('../ProfilePage'));
 
 
 
@@ -38,6 +39,7 @@ const UserDashboard = () => {
           <Route path='/results' element={<ResultSection />} />
           <Route path='/wallet' element={<WalletSection />} />
           <Route path='/viewexam/:id/*' element={<ViewExamPage />} />
+          <Route path='/profile' element={<ProfilePage />} />
         </Routes>
       </Suspense>
     </main>

@@ -89,45 +89,51 @@ const ViewExamPage = () => {
   useEffect(() => {
     if(!exam) return;
     let completed = <DataBox icon='check_circle' content='Exam Completed' size='large' />
+    
 
-    // If result exists (Student started this test previously)
-    if(result){
-      if(exam.meta.resultDeclared) 
-        setSideBtns(<button className="btn primary large" onClick={showResults}>View Results</button>); 
-      else if(result.meta.ended || exam.lastStartTime + exam.duration * 60 * 1000 < Date.now())
-          setSideBtns(completed);
-      else setSideBtns(<button className="btn primary large" onClick={startHandler}>Continue</button>);
-
-    // If student is enrolled in this exam
-    } else if(isEnrolled) {
-      if(exam.startTime > Date.now()) setSideBtns(<DataBox icon='check_circle' content='Enrolled' size='large' />);
-      else if(exam.lastStartTime + exam.duration * 60 * 1000 > Date.now()) 
-          setSideBtns(<button className="btn primary large" onClick={startHandler}>Start Exam</button>);
-      else setSideBtns(completed);
-
-		// If student is not enrolled in this exam
-    } else {
-      if(exam.startTime > Date.now()) 
-          setSideBtns(<button className="btn primary large" onClick={enrollHandler}>Enroll</button>);
-      else setSideBtns(completed);
-    }    
-
-
-
+    
     // If result exists
+    if(result){
+      if(!result.meta.ended && ( parseInt(result.meta.startedOn) + exam.duration * 60 * 1000 > Date.now()) )
+        setSideBtns(<button className="btn primary large" onClick={startHandler}>Continue</button>);
+      else if(exam.meta.resultDeclared) 
+        setSideBtns(<button className="btn primary large" onClick={showResults}>View Results</button>);
+      else setSideBtns(<DataBox icon='schedule' content='Results Pending' size='large' />);
+    }
         // Check if user can continue ( show continue button )
         // Check if result is of type practice ( show results button )
         // Check if result is declared ( show results button )
         // Check if result is not declared ( show results pending )
 
+
     // If student is enrolled in this exam
+    else if(isEnrolled){
+      if(exam.startTime > Date.now()) setSideBtns(<DataBox icon='check_circle' content='Enrolled' size='large' />);
+      else if(exam.lastStartTime > Date.now())
+          setSideBtns(<button className="btn primary large" onClick={startHandler}>Start Exam</button>);
+      else if(!exam.meta.resultDeclared)
+          setSideBtns(<DataBox icon='schedule' content='Time exceeded' size='large' />)
+      else if(exam.meta.availableForPractice)
+          setSideBtns(<button className="btn primary large" onClick={startHandler}>Practice exam</button>)
+      else setSideBtns(completed);
+    }
         // Check if exam is not started ( show enrolled status )
         // Check if exam is started and not exceeded lastStartTime ( show start button )
         // Check if lastStartTime is exceeded and result is not declared ( Show time exceeded status )
         // Check if results are declared and is available for practice ( show practice test option )
         // Check if results are declared and is not available for practice ( show time exceed )
 
+
     // Not enrolled in this exam
+    else {
+      if(exam.startTime > Date.now())
+        setSideBtns(<button className="btn primary large" onClick={enrollHandler}>Enroll</button>);
+      else if(!exam.meta.resultDeclared)
+        setSideBtns(<DataBox icon='schedule' content="Can't enroll anymore" size='large' />)
+      else if(exam.meta.availableForPractice)
+        setSideBtns(<button className="btn primary large" onClick={startHandler}>Practice exam</button>)
+      else setSideBtns(completed);
+    }
         // Check if exam is started ( if not show enroll button )
         // If exam is started and results are not declared ( show Can't Enroll status)
         // If results are declared and is available for practice ( show practice exam button )

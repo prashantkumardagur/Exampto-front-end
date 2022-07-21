@@ -18,6 +18,8 @@ const InputField = React.forwardRef((props, ref) => {
       maxLength={props.maxLength}
       placeholder={props.placeholder}
       required={props.required}
+      disabled={props.disabled}
+      readOnly={props.readOnly}
     />
   </section>);
 })
@@ -34,7 +36,9 @@ InputField.defaultProps = {
   step: '',
   minLength: '',
   maxLength: '',
-  placeholder: ''
+  placeholder: '',
+  disabled: false,
+  readOnly: false,
 }
 
 export default React.memo(InputField);

@@ -1,4 +1,4 @@
-export const hostUrl = "https://exampto.herokuapp.com";
+export const hostUrl = "http://localhost:8080";
 
 
 // Function to run APIs

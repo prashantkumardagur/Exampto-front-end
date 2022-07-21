@@ -14,7 +14,10 @@ const SearchResults = (props) => {
   <div className="search-results p-absolute p-2 rounded-1">
     {props.exams.length === 0 ? <>
       <img src="/svg/search.svg" alt="" />
-      <p className="fs-2 txt2 mt-3 text-center"> Search functionality is currently under maintainance. Stay tuned...</p>
+      <p className="fs-2 txt2 mt-3 text-center"> 
+        Search functionality is currently under maintainance. So, it may not provide desired results but you 
+        can still use it. Stay tuned for updates.
+      </p>
     </> : <>
       <ExamList list={props.exams} linkTo={`/${props.role}/viewexam/`} />
     </>}

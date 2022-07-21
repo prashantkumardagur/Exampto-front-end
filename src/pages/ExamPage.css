@@ -46,14 +46,14 @@
   color: white;
 }
 
-.option{
+.options .option{
   padding: 10px 10px 10px 50px;
   border-radius: 6px;
   border: 2px solid var(--shadow);
   margin: 15px 0;
   position: relative;
 }
-.option::before{
+.options .option::before{
   content: '';
   position: absolute;
   display: block;
@@ -62,18 +62,18 @@
   border: 2px solid var(--txt2);
   border-radius: 50%;
 }
-.option:hover{
+.options .option:hover{
   background-color: var(--accent2);
   border-color: var(--accent2);
   color: black;
 }
-.option:hover::before{
+.options .option:hover::before{
   border-color: black;
 }
-.option.active{
+.options .option.active{
   border-color: var(--accent1);
 }
-.option.active::before{
+.options .option.active::before{
   border-color: var(--accent1);
   background-color: var(--accent1);
 }

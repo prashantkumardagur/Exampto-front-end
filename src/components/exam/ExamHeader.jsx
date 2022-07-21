@@ -15,7 +15,7 @@ import Timer from './Timer';
 const ExamHeader = (props) => {
   const { toggleDarkMode } = useContext(AppContext);
   const { person } = useContext(AuthContext);
-  const { initialRemainingTime } = useContext(ExamContext);
+  const { initialRemainingTime, examType } = useContext(ExamContext);
 
   
 
@@ -24,7 +24,7 @@ const ExamHeader = (props) => {
       <div className="d-flex align-center">
         <IconButton icon='menu' onClick={props.toggleNav} />
         <h1 className="d-none d-md-inline mx-2 h3">Exampto</h1>
-        <DataBox color='red' content="Live exam" icon='radio_button_checked' />
+        <DataBox color={examType === "Live" ? 'red' : 'accent'} content={`${examType} exam`} icon='radio_button_checked' />
       </div>
 
       <aside className="d-flex align-center gap-1 gap-md-2">

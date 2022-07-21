@@ -24,6 +24,7 @@ const PracticeSection = () => {
     const getPracticeExams = async () => {
       const response = await getPracticeExamsAPI(token);
       setLoading(false);
+      console.log(response);
       if(response.status !== 'success'){ console.log(response.message); return; }
       setAvailableExams(response.data.availablePracticeExams);
       setAttemptedExams(response.data.attemptedPracticeExams);

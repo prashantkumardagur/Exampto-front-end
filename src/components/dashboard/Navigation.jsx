@@ -63,7 +63,7 @@ const Navigation = (props) => {
       <aside className="d-flex align-center gap-1 gap-md-2">
         <IconButton icon='brightness_6' onClick={toggleDarkMode} />
         <Notifications />
-        <UserIcon text={person.name} />
+        <UserIcon text={person.name} linkTo={'profile'} />
         <IconButton icon='logout' color='var(--red)' className='d-mob-none' onClick={logoutHandler} />
       </aside>
     </header>
