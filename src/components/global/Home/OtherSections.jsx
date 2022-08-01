@@ -2,7 +2,7 @@ const OtherSections = (props) => {
   return (<>
     <div className="home-features">
       <h2 className="headings">Features</h2>
-      <div className="d-grid gap-3">
+      <div className="d-md-grid gap-3">
         <div className="home-feature">
           <img src="/svg/grades.svg" alt="feature" />
           <p>Participate in public contests to boost your knowledge on the subject.</p>

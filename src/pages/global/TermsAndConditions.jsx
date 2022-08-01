@@ -18,7 +18,7 @@ const TermsAndConditions = (props) => {
   
   <div className="info-div">
   
-  <h1>TermsAndConditions</h1>
+  <h1>Terms And Conditions</h1>
 
   <div id="info-Introduction">
     <h2>Introduction</h2>

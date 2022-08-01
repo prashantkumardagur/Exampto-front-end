@@ -1,4 +1,4 @@
-export const hostUrl = "http://localhost:8080";
+export const hostUrl = process.env.REACT_APP_BACKEND_URL;
 
 
 // Function to run APIs
