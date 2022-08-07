@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 const GlobalPage = React.lazy(() => import('./components/global/GlobalPage'));
+const HomePage = React.lazy(() => import("./pages/HomePage"));
 
 const UserDashboard = React.lazy(() => import('./pages/userDashboard/UserDashboard'));
 const AdminDashboard = React.lazy(() => import('./pages/adminDashboard/AdminDashboard'));
@@ -14,6 +15,7 @@ const EditorPage = React.lazy(() => import('./pages/EditorPage'));
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<HomePage />} />
       <Route path='/*' element={<GlobalPage />} />
 
       <Route path='/user/*' element={<UserDashboard />} />

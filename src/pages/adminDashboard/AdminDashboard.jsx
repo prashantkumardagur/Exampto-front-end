@@ -7,6 +7,7 @@ import PageLoader from "../../components/ui/PageLoader";
 const AnalyticsSection = React.lazy(() => import('./AnalyticsSection'));
 const UserSection = React.lazy(() => import('./UserSection'));
 const CoordinatorSection = React.lazy(() => import('./CoordinatorSection'));
+const MessagesSection = React.lazy(() => import('./MessagesSection'));
 
 
 
@@ -35,6 +36,7 @@ const UserDashboard = () => {
 					<Route path='/analytics' element={<AnalyticsSection />} />
 					<Route path='/users' element={<UserSection />} />
 					<Route path='/coordinators' element={<CoordinatorSection />} />
+					<Route path="/messages" element={<MessagesSection />} />
 				</Routes>
 			</Suspense>
 		</main>

@@ -15,7 +15,11 @@
 .btn.secondary{ border: 2px solid var(--accent1); border-radius: 6px; padding: 6px 12px;}
 .btn.small.primary{padding: 6px 10px; font-size: 15px;}
 .btn.small.secondary{padding: 4px 10px; font-size: 15px;}
-.btn.large{padding: 10px 20px; font-size: 17px;}
+.btn.large{font-size: 17px; border-radius: 8px;}
+.btn.large.primary{padding: 10px 20px;}
+.btn.large.secondary{padding: 8px 18px;}
+.btn.primary2{background-color: var(--accent2); color: black; border-radius: 6px; padding: 8px 14px;}
+.btn.secondary2{ border: 2px solid var(--accent2); color: var(--accent2); border-radius: 6px; padding: 6px 12px;}
 
 .btn-link{font-weight: 500;}
 
@@ -50,7 +54,7 @@
 
 
 .exam-list{ display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-gap: 30px; flex-wrap: wrap; }
-.exam-card{ border-radius: 6px; padding: 10px 10px 15px 10px; max-width: 400px; border: 2px solid var(--shadow); cursor: pointer; position: relative;}
+.exam-card{ border-radius: 6px; padding: 10px 10px 15px 10px; max-width: 400px; background-color: var(--light-accent-bg); cursor: pointer; position: relative;}
 .exam-card:hover{ border-color: var(--txt2); }
 .exam-card h5{ padding: 10px 0;}
 .exam-card p{font-size: 14px;}

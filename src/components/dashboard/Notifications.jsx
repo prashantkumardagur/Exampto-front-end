@@ -28,7 +28,7 @@ const Notifications = () => {
   const [visibility, setVisibility] = useState(false);
 
   return (<>
-    <IconButton icon='notifications' onClick={() => setVisibility(!visibility)} />
+    <IconButton icon='notifications' onClick={() => setVisibility(!visibility)} style={{display: 'none'}} />
     <NotificationCard visibility={visibility} close={ () => {setVisibility(false)} } />
   </>);
 }

@@ -1,10 +1,10 @@
 /* A utility CSS file for the theme. */
 
 :root{
-    --accent1: #0652dd;
-    --accent2: #cce4ff;
+    --accent1: #7400d3;
+    --accent2: #ffeed3;
 
-    --light-accent-bg: #e8f4ff;
+    --light-accent-bg: #fdf2d0;
 
     --black: #000;
     --white: #fff;

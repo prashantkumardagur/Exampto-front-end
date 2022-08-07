@@ -12,6 +12,7 @@ import { getExamsAPI } from "../../api/user";
 const ExamSection = () => {
   const { token } = useContext(AuthContext);
 
+  const [loading, setLoading] = useState(true);
   const [exams, setExams] = useState({
     upcomingExams: [],
     availableExams: [],
@@ -24,6 +25,7 @@ const ExamSection = () => {
   useEffect(() => {
     const getUserExams = async () => {
       const response = await getExamsAPI(token);
+      setLoading(false);
       if(response.status !== 'success') { console.log(response.message); return; }
 
       let { enrolledExams, availableExams } = response.data;
@@ -46,13 +48,13 @@ const ExamSection = () => {
 
   return (<>
     <Section heading="Exams you are enrolled in" >
-      <ExamList list={exams.upcomingExams} linkTo={'/user/viewexam/'} />
+      <ExamList list={exams.upcomingExams} linkTo={'/user/viewexam/'} loading={loading} />
     </Section>
     <Section heading="Mock Exams Available" >
-      <ExamList list={exams.availableExams} linkTo={'/user/viewexam/'} />
+      <ExamList list={exams.availableExams} linkTo={'/user/viewexam/'} loading={loading} />
     </Section>
     <Section heading="Completed Exams" >
-      <ExamList list={exams.completedExams} linkTo={'/user/viewexam/'} />
+      <ExamList list={exams.completedExams} linkTo={'/user/viewexam/'} loading={loading} />
     </Section>
   </>);
 }

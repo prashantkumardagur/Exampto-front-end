@@ -20,3 +20,8 @@ export const createCoordinatorAPI = async (token, data) => {
 export const toggleBanAPI = async (token, id) => {
   return await runAPI("/admin/toggle-ban", token, {id});
 }
+
+// Get messages
+export const getMessagesAPI = async (token) => {
+  return await runAPI("/admin/get-messages", token);
+}

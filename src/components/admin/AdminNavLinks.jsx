@@ -25,6 +25,12 @@ const AdminNavLinks = () => {
           Coordinators
         </NavLink>
       </li>
+      <li>
+        <NavLink to='/admin/messages' className={checkActive}>
+          <IconHolder icon='chat' color='#0652dd' /> 
+          Messages
+        </NavLink>
+      </li>
     </>
   );
 }
