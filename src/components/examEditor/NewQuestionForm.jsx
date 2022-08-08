@@ -36,6 +36,7 @@ const NewQuestionForm = () => {
       options: optionNumber.map((i) => formData.get(`newOption${i}`)),
       answer: formData.get("newAnswer"),
     }
+    if(!data.question) data.question = '';
 
     const response = await addQuestionAPI(token, exam._id, data);
     if(response.status !== "success") { setBtnState(response.message); return; }

@@ -85,8 +85,7 @@ const QuestionInput = React.forwardRef((props, ref) => {
       name="newQuestion" 
       id='newQuestion' 
       minLength='1' 
-      maxLength='4095' 
-      required
+      maxLength='4095'
       onInput={onTextAreaInput}
       placeholder="Enter question here"
     ></textarea>

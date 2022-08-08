@@ -1,4 +1,4 @@
-export const hostUrl = process.env.REACT_APP_BACKEND_URL;
+export const hostUrl = process.env.REACT_APP_BACKEND_URL || 'https://api.exampto.com';
 
 
 // Function to run APIs
