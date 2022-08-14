@@ -74,7 +74,7 @@ const Navigation = (props) => {
       <ul>{navlinks}</ul>
 
       <div className="navFooter p-absolute d-flex align-center justify-between w-100 d-md-none">
-        <Link to='#' className="userIcon align-center">
+        <Link to='profile' className="userIcon align-center">
           <IconHolder icon='person' fontSize='32px' />
           <span className="txt1">{person.name}</span>
         </Link>

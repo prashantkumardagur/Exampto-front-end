@@ -6,7 +6,7 @@ import NewsletterForm from "./NewsletterForm";
 
 const OtherSections = (props) => {
   return (<>
-    <div className='home-features mt-7' id='features'>
+    <div className='home-features' id='features' style={{marginTop: "30vw"}}>
 
       <div className="home-feature grid-md-2 gap-1">
         <div className="feature-image">
@@ -50,7 +50,7 @@ const OtherSections = (props) => {
 
     </div>
 
-    <div className="home-feature-end p-relative mt-7">
+    <div className="home-feature-end p-relative mt-md-8">
       <img src="/images/decoration/laptop-feature.webp" alt="decoration" className='m-auto p-absolute' />
     </div>
 

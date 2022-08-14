@@ -11,6 +11,7 @@
 
 .navbar{ top: 0; height: 60px; border-bottom: 2px solid var(--shadow); background-color: white; z-index: 999;}
 .navbar .leadingName{color: black;}
+.navbar img{height: 40px;}
 .navbar a{font-family: var(--font2); font-weight: 700;}
 .navbar a:hover, .nav-links button:hover{text-decoration: underline;}
 .nav-links button{ background-color: transparent; border: none; color: inherit; font-family: var(--font2);
@@ -37,12 +38,12 @@
 .display-heading{font-size: 80px;}
 .big-heading{font-size: 40px;}
 
-.hero-section{padding: 120px 35vw 100px 10vw; color: white; background-color: #1f0029; min-height: 100vh; overflow: hidden;}
-.hero-section h1{font-size: 100px; margin-top: 4vw;}
-.hero-section p{color: #aaa; padding-left: 10px; border-left: 2px solid var(--accent2); line-height: 180%;}
+.hero-section{padding: 120px 20vw 30vw 10vw; color: white; background-color: #1f0029; min-height: 100vh;}
+.hero-section h1{font-size: 120px; margin-top: 2vw;}
+.hero-section p{color: #aaa; padding: 0 15vw 0 10px; border-left: 2px solid var(--accent2); line-height: 180%;}
 
-.hero-image-1{width: 30vw; bottom: -4vh; right: -1vw;}
-.hero-image-2{width: 30vw; top: 10vh; right: -1vw; width: 12vw;}
+.hero-image-1{width: 60vw; top: 100vh; left: 50vw; transform: translateX(-50%);}
+.hero-image-2{width: 30vw; top: 10vh; right: 1vw; width: 12vw;}
 
 .gradient-circle{width: 1px; height: 1px; border-radius: 50%; background-color: var(--accent2);
   position: absolute; top: 90%; left: 70%; transform: translate(-50%, -50%); box-shadow: 0 0 500px 300px #ff6b1650;}
@@ -56,8 +57,8 @@
 .home-feature ul{list-style-type: "\2714"; margin-left: 1em;}
 .home-feature span{margin-left: 10px;}
 
-.home-feature-end{background-color: #1f0029; height: 240px; }
-.home-feature-end img{width: 30vw; left: 50%; bottom: 120px; transform: translateX(-50%);}
+.home-feature-end{background-color: #1f0029; height: 500px; }
+.home-feature-end img{width: 60vw; left: 50%; bottom: 120px; transform: translateX(-50%);}
 
 
 .quoted img{width: 100%;}
@@ -127,14 +128,26 @@
 
 
 
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1; }
+}
+
+
+
 
 @media screen and (max-width: 600px) {
-    .hero-section{padding: 120px 5vw 100px 5vw}
-    .hero-section h1{font-size: 50px;}
+    .nav-links-mob{ flex-direction: column; width: 100%; left: 0; top: 60px; animation: fadeIn 0.2s;}
+    .nav-links-mob a{ color: black !important;}
+    .menu-icon{color: black;}
+    .navbar.dissolve-nav .menu-icon.home-nav-icon{color: white;}
+
+    .hero-section{padding: 120px 0vw 100px 5vw}
+    .hero-section h1{font-size: 50px; margin-top: 60px;}
     .hero-section p{line-height: 140%;}
 
     .gradient-circle{box-shadow: 0 0 120px 120px #ff6b1660; top: 40vh; left: 45vw;}
-    .hero-image-1{width: 60vw}
+    .hero-image-1{width: 80vw; position: relative; top: 15vh; left: 45vw; }
     .hero-image-2{width: 20vw;}
 
 
@@ -146,6 +159,7 @@
     .home-feature .feature-image{order: 1;}
     .home-feature .feature-content{order: 2;}
 
+    .home-feature-end{height: 240px;}
     .home-feature-end img{width: 80vw;}
 
 

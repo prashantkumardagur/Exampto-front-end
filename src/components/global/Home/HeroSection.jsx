@@ -6,12 +6,6 @@ import Hbtn from '../../ui/Buttons/Hbtn';
 const HeroSection = () => {
   return (
     <div className="hero-section p-relative">
-      
-      <div className="hero-decoration">
-        <div className="gradient-circle p-absolute"></div>
-        <img src="/images/decoration/digital-product.webp" alt='decoration' className='p-absolute hero-image-1' />
-        <img src="/images/decoration/product-star.png" alt='decoration' className='p-absolute hero-image-2' />
-      </div>
 
       <div className="hero-content p-relative">
         <h1 className='w500'>Are you the Next Champion?!</h1>
@@ -26,6 +20,12 @@ const HeroSection = () => {
             <IconHolder icon="east" color="white" className="ml-2" />
           </a>
         </div>
+      </div>
+            
+      <div className="hero-decoration">
+        <div className="gradient-circle p-absolute"></div>
+        <img src="/images/decoration/digital-product.webp" alt='decoration' className='p-absolute hero-image-1' />
+        <img src="/images/decoration/product-star.png" alt='decoration' className='p-absolute hero-image-2' />
       </div>
 
     </div>
