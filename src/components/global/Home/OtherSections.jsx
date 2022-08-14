@@ -13,21 +13,20 @@ const OtherSections = (props) => {
           <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-7' />
         </div>
         <div className="feature-content">
-          <h4 className='haccent'>Design & Layouts</h4>
-          <h5 className='my-3'>Keep Things Simple With Tability Systems</h5>
-          <p className='txt2 fs-4 mb-4'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem 
-            aperiam eaque quae abillo inventore veritatis etquasi architecto beatae vitae dicta</p>
+          <h4 className='haccent'>Choose and Compete</h4>
+          <h5 className='my-3'>Get the chance to Earn while you Learn</h5>
+          <p className='txt2 fs-4 mb-4'>Choose any Public Contest Based on your favourite Subject or Exam and win 
+            contest money with Live tracking of your Performance.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
       </div>
 
       <div className="home-feature d-grid grid-md-2 gap-1">
         <div className="feature-content">
-          <h4 className='haccent'>Well Combinations</h4>
-          <h5 className='my-3'>Perfect Combination For Any Kind Of Device</h5>
-          <p className='txt2 fs-4 mb-4'>But I must explain to you how all this mistaken idea of denouncing pleasure 
-          praising pain was born and will give complete account the system, and expound the actual teachings of the 
-          great explorer truth, the master-builder of human happiness.</p>
+          <h4 className='haccent'>Challenge Zone</h4>
+          <h5 className='my-3'>Customized contests for every subjects</h5>
+          <p className='txt2 fs-4 mb-4'>Decide your subject and  Challenge your friend/group for 1V1/Team 
+          match. We will arrange Customized contest according to Subject.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
         <div className="feature-image">
@@ -40,10 +39,10 @@ const OtherSections = (props) => {
           <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-7' />
         </div>
         <div className="feature-content">
-          <h4 className='haccent'>Design & Layouts</h4>
-          <h5 className='my-3'>Keep Things Simple With Tability Systems</h5>
-          <p className='txt2 fs-4 mb-4'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusant doloremque laudantium totam rem 
-            aperiam eaque quae abillo inventore veritatis etquasi architecto beatae vitae dicta</p>
+          <h4 className='haccent'>Practice with Analysis</h4>
+          <h5 className='my-3'>Keep Practicing with personalized analysis</h5>
+          <p className='txt2 fs-4 mb-4'>Get Unlimited free Practice contest for any Exam/Subjects and get 
+          Personalized analysis of your Performance.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
       </div>
@@ -60,11 +59,10 @@ const OtherSections = (props) => {
           <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-7' />
         </div>
         <div className="feature-content">
-          <h4 className='haccent'>Work Better Together</h4>
+          <h4 className='haccent'>Choose and Compete</h4>
           <h5 className='my-3'>Simple Design Prototyping and collaboration</h5>
-          <p className='txt2 fs-4 mb-2'>But I must explain to you how all this mistaken idea of denouncing pleasure 
-          praising pain was born and will give complete account the system, and expound the actual teachings of the 
-          great explorer truth, the master-builder of human happiness.</p>
+          <p className='txt2 fs-4 mb-2'>Choose any Public Contest Based on your favourite Subject or Exam and win 
+          contest money with Live tracking of your Performance.</p>
           <ul className='txt2 fs-4 mb-4'>
             <li><span>Unlimited design possibility</span></li>
             <li><span>Beautiful mobile apps</span></li>
@@ -79,8 +77,8 @@ const OtherSections = (props) => {
     <div className="home-features mt-5">
       <div className="home-feature d-grid grid-md-2 gap-md-1" style={{marginBottom: '60px'}}>
         <div className="feature-content">
-          <h4 className="haccent">Customer Reviews</h4>
-          <h5 className='my-3'>What our customers say about us?</h5>
+          <h4 className="haccent">Who are you?</h4>
+          <h5 className='my-3'>You can be the superstar of your favorite subject</h5>
           <div className="d-grid quoted gap-2">
             <img src="/images/decoration/left-quote.png" alt="quote" />
             <p className="txt2 fs-4 mb-2 w500">
@@ -114,8 +112,8 @@ const OtherSections = (props) => {
     <div className="home-plans-section text-center p-relative">
       <div className="home-plans-decoration p-absolute"></div>
       <div className="home-plans-content p-relative">
-        <h3 className="haccent pb-3">Smart Pricing Plans</h3>
-        <h2>Appropriate Pricing Plans</h2>
+        <h3 className="haccent pb-3">Hall of Fame</h3>
+        <h2>Our previous Achievers</h2>
         <div className="home-plans my-6 d-grid">
           <div></div>
           <div></div>
