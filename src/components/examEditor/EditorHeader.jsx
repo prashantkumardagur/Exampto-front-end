@@ -26,7 +26,7 @@ const EditorHeader = (props) => {
     </div>
 
     <aside className="d-flex align-center gap-1 gap-md-2">
-      <IconButton icon='brightness_6' onClick={appContext.toggleDarkMode} />
+      <IconButton style={{display: "none"}} icon='brightness_6' onClick={appContext.toggleDarkMode} />
       <Notifications />
       <UserIcon text={person.name} />
       <IconButton icon='logout' color='var(--red)' className='d-mob-none' onClick={logout} />

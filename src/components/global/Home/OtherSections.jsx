@@ -6,11 +6,11 @@ import NewsletterForm from "./NewsletterForm";
 
 const OtherSections = (props) => {
   return (<>
-    <div className='home-features' id='features' style={{marginTop: "30vw"}}>
+    <div className='home-features' id='features' style={{marginTop: "50vw"}}>
 
-      <div className="home-feature grid-md-2 gap-1">
+      <div className="home-feature grid-md-2 gap-3">
         <div className="feature-image">
-          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-7' />
+          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-5' />
         </div>
         <div className="feature-content">
           <h4 className='haccent'>Choose and Compete</h4>
@@ -21,7 +21,7 @@ const OtherSections = (props) => {
         </div>
       </div>
 
-      <div className="home-feature d-grid grid-md-2 gap-1">
+      <div className="home-feature d-grid grid-md-2 gap-3">
         <div className="feature-content">
           <h4 className='haccent'>Challenge Zone</h4>
           <h5 className='my-3'>Customized contests for every subjects</h5>
@@ -30,13 +30,13 @@ const OtherSections = (props) => {
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
         <div className="feature-image">
-          <img src="/images/decoration/feature2.webp" alt='feature' className='mr-md-auto ml-md-7' />
+          <img src="/images/decoration/feature2.webp" alt='feature' className='mr-md-auto ml-md-5' />
         </div>
       </div>
 
-      <div className="home-feature grid-md-2 gap-1">
+      <div className="home-feature grid-md-2 gap-3">
         <div className="feature-image">
-          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-7' />
+          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-5' />
         </div>
         <div className="feature-content">
           <h4 className='haccent'>Practice with Analysis</h4>
@@ -54,9 +54,9 @@ const OtherSections = (props) => {
     </div>
 
     <div className='home-features d-none mt-6'>
-      <div className="home-feature grid-md-2 gap-md-1">
+      <div className="home-feature grid-md-2 gap-md-3">
         <div className="feature-image">
-          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-7' />
+          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-5' />
         </div>
         <div className="feature-content">
           <h4 className='haccent'>Choose and Compete</h4>
@@ -89,21 +89,7 @@ const OtherSections = (props) => {
         </div>
         <div className="feature-image review-image-parent p-relative">
           <div className="review-image-div p-relative ml-md-auto">
-            <div className="review-circle p-absolute"></div>
-            <img src="/images/decoration/right-quote.png" alt="quote" className='review-quote p-absolute' />
-            <div className="review-decoration">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div className="review-persons">
-              <img src="/images/person.jpg" alt="person" />
-              <img src="/images/person.jpg" alt="person" />
-              <img src="/images/person.jpg" alt="person" />
-              <img src="/images/person.jpg" alt="person" />
-              <img src="/images/person.jpg" alt="person" />
-            </div>
+            <img src="/images/banner1.png" alt="banner" className='review-image' />
           </div>
         </div>
       </div>
@@ -115,9 +101,21 @@ const OtherSections = (props) => {
         <h3 className="haccent pb-3">Hall of Fame</h3>
         <h2>Our previous Achievers</h2>
         <div className="home-plans my-6 d-grid">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div>
+            <img src="/images/profile1.jpg" alt="achiever" />
+            <h6>Virat Thakur</h6>
+            <p>Hii! I am Virat Thakur. I am preparing for SBI and IBPS PO. I really appreciate exampto for 
+              providing such a good platform for students so we can learn and earn simultaneously.</p>
+          </div>
+          <div>
+            <img src="/images/decoration/winner1.jpeg" alt="achiever" />
+            <h6 style={{color: 'white'}}>Are you the next<br/><span style={{fontSize: "2em"}}>Champion?</span></h6>          </div>
+          <div>
+            <img src="/images/profile2.jpg" alt="achiever" />
+            <h6>Shubham Mishra</h6>
+            <p>Hello, I am Shubham Mishra I am preparing for SSC CGL, I love the way exampto helping aspirant 
+              in acheving their dreams.</p>
+          </div>
         </div>
       </div>
     </div>

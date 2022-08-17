@@ -148,7 +148,7 @@ const ViewExamPage = () => {
   return (<>
     <ExamDetails exam={exam} sideBtns={sideBtns} />
     <Routes>
-      <Route path="" element={<ExamInstructions />} />
+      <Route path="" element={<ExamInstructions type='user' />} />
       <Route path="view-results" element={<ViewResults />} />
     </Routes>
   </>);

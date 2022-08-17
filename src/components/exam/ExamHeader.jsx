@@ -28,7 +28,7 @@ const ExamHeader = (props) => {
       </div>
 
       <aside className="d-flex align-center gap-1 gap-md-2">
-        <IconButton icon='brightness_6' onClick={toggleDarkMode} />
+        <IconButton style={{display: "none"}} icon='brightness_6' onClick={toggleDarkMode} />
         <UserIcon text={person.name} />
         <Timer remainingTime={initialRemainingTime} />
       </aside>

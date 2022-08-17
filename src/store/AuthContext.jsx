@@ -7,6 +7,7 @@ import { refreshTokenAPI, loginAPI } from "../api/auth";
 // AuthContext definition
 const AuthContext = React.createContext({
   isLoggedIn: false,
+  token: '',
   person: {},
   updatePerson: () => {},
   role: '',

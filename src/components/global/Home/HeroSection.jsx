@@ -24,7 +24,9 @@ const HeroSection = () => {
             
       <div className="hero-decoration">
         <div className="gradient-circle p-absolute"></div>
-        <img src="/images/decoration/digital-product.webp" alt='decoration' className='p-absolute hero-image-1' />
+        <div className='hero-image-div p-relative mt-7'>
+          <img src="/images/decoration/digital-product.webp" alt='decoration' className='hero-image-1' />
+        </div>
         <img src="/images/decoration/product-star.png" alt='decoration' className='p-absolute hero-image-2' />
       </div>
 

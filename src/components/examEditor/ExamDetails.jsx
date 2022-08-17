@@ -47,12 +47,21 @@ const ExamDetails = () => {
         negative: formData.get('negative'),
       },
       "meta.isPrivate" : formData.get('visibility'),
+      "meta.availableForPractice" : formData.get('conversion')
     }
     
     const response = await updateExamDetailsAPI( token, exam._id, data);
     if(response.status !== 'success'){ setBtnState(response.message); return; }
 
-    setExam({...exam, ...data, meta : {...exam.meta, isPrivate : data["meta.isPrivate"] === 'true'} });
+    setExam({
+      ...exam,
+      ...data,
+      meta : {
+        ...exam.meta, 
+        isPrivate : data["meta.isPrivate"] === 'true',
+        availableForPractice : data["meta.availableForPractice"] === 'true'
+        }
+      });
     setBtnState('Changes saved successfully.');
   }
 
@@ -108,7 +117,11 @@ const ExamDetails = () => {
       <Checkboxes label='Category' name='category' defaultValue={exam.category} onUpdate={categoryChangeHandler} >
         <span value='JEE'>JEE</span>
         <span value='NEET'>NEET</span>
-        <span value='SSC'>SSC</span>
+        <span value='CDS'>CDS</span>
+        <span value='BANK'>BANK</span>
+        <span value='NDA'>NDA</span>
+        <span value='UPSC'>UPSC</span>
+        <span value='GATE'>GATE</span>
       </Checkboxes>
       <p className="fs-2 pt-2 pt-md-4">
         This exam will be visible to students with selected programs only.
@@ -141,6 +154,16 @@ const ExamDetails = () => {
 
     <h6 className="ch accent1 mt-5">Custom Controls</h6>
     <div className="grid-md-2 gap-3">
+      <SelectField label="Conversion" id="examConversion" name="conversion" defaultValue={exam.meta.availableForPractice ? 'true' : 'false'}>
+        <option value="false">Don't convert</option>
+        <option value="true">Convert to practice test</option>
+      </SelectField>
+      <p className="fs-2 pt-1 pt-md-4">
+        If you allow conversion, the exam will be converted to a practice test after the result declaration, so that the 
+        students who didn't attempt the exam can attempt it as a practice test.
+      </p>
+    </div>
+    <div className="grid-md-2 gap-3 mt-2">
       <SelectField label='Exam Visibility' id='examVisibility' name='visibility' defaultValue={exam.meta.isPrivate ? 'true' : 'false'} >
         <option value="false">Visible to everyone</option>
         <option value="true">People with link only</option>
