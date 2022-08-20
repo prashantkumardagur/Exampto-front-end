@@ -8,7 +8,8 @@ const AnalyticsSection = React.lazy(() => import('./AnalyticsSection'));
 const MyTestsSection = React.lazy(() => import('./MyTestsSection'));
 const NewTestSection = React.lazy(() => import('./NewTestSection'));
 const ViewExamPage = React.lazy(() => import('./ViewExamPage'));
-const ProfilePage = React.lazy(() => import('../ProfilePage'))
+const ProfilePage = React.lazy(() => import('../ProfilePage'));
+const NotFound = React.lazy(() => import('../404'));
 
 
 
@@ -39,6 +40,7 @@ const UserDashboard = () => {
 					<Route path='/newtest' element={<NewTestSection />} />
 					<Route path='/viewexam/:id' element={<ViewExamPage />} />
           <Route path='/profile' element={<ProfilePage />} />
+					<Route path='*' element={<NotFound home="analytics" />} />
 				</Routes>
 			</Suspense>
 		</main>

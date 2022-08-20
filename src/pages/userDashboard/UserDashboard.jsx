@@ -10,6 +10,7 @@ const ResultSection = React.lazy(() => import('./ResultSection'));
 const WalletSection = React.lazy(() => import('./WalletSection'));
 const ViewExamPage = React.lazy(() => import('./ViewExamPage'));
 const ProfilePage = React.lazy(() => import('../ProfilePage'));
+const NotFound = React.lazy(() => import('../404'));
 
 
 
@@ -40,6 +41,7 @@ const UserDashboard = () => {
           <Route path='/wallet' element={<WalletSection />} />
           <Route path='/viewexam/:id/*' element={<ViewExamPage />} />
           <Route path='/profile' element={<ProfilePage />} />
+          <Route path='*' element={<NotFound home="exams" />} />
         </Routes>
       </Suspense>
     </main>

@@ -80,9 +80,9 @@ export const AuthContextProvider = (props) => {
       localStorage.setItem('expiry', Date.now() + 3600000 * 12);
       setToken(response.token);
       setPerson(response.person);
-      return 'Login Successful';
+      return {message: 'Login Successful', role: response.person.role};
     } else {
-      return response.message;
+      return {message: response.message, role: ''};
     }
   }
 

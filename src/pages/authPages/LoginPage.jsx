@@ -31,14 +31,14 @@ const LoginPage = () => {
         };
 
         const response = await authContext.login(data);
-        if (response !== "Login Successful") {
-            setState({ msg: response, color: "red" });
+        if (response.message !== "Login Successful") {
+            setState({ msg: response.message, color: "red" });
             return;
         }
 
         e.target.reset();
         setState({ msg: "Successfully logged in", color: "green" });
-        setTimeout(() => { navigate("/") }, 1000);
+        setTimeout(() => { navigate(`/${response.role}/`) }, 1000);
     }
 
 

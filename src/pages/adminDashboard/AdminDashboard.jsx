@@ -8,6 +8,7 @@ const AnalyticsSection = React.lazy(() => import('./AnalyticsSection'));
 const UserSection = React.lazy(() => import('./UserSection'));
 const CoordinatorSection = React.lazy(() => import('./CoordinatorSection'));
 const MessagesSection = React.lazy(() => import('./MessagesSection'));
+const NotFound = React.lazy(() => import('../404'));
 
 
 
@@ -37,6 +38,7 @@ const UserDashboard = () => {
 					<Route path='/users' element={<UserSection />} />
 					<Route path='/coordinators' element={<CoordinatorSection />} />
 					<Route path="/messages" element={<MessagesSection />} />
+					<Route path='*' element={<NotFound home="analytics" />} />
 				</Routes>
 			</Suspense>
 		</main>

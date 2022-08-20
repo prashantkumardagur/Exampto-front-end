@@ -30,7 +30,8 @@ const SignUpPage = () => {
             name: formData.get("name"),
             email: formData.get("email"),
             password: formData.get("password"),
-            program: formData.get("program")
+            program: formData.get("program"),
+            gender: formData.get("gender"),
         };
 
         if(data.password !== password2) {
@@ -57,8 +58,8 @@ const SignUpPage = () => {
         <h3 className="mb-2">Sign Up</h3>
         {state && <DataBox content={state.msg} color={state.color} size='small' />}
         <Form onSubmit={submitHandler}>
-            <InputField label='Name' id='name' name='name' />
-            <SelectField label='Program' name='program' defaultValue='JEE' >
+            <InputField label='Name' id='name' name='name' required />
+            <SelectField label='Program' name='program' defaultValue='JEE' required>
                 <option value="JEE">JEE</option>
                 <option value="NEET">NEET</option>
                 <option value='CDS'>CDS</option>
@@ -67,9 +68,16 @@ const SignUpPage = () => {
                 <option value='UPSC'>UPSC</option>
                 <option value="GATE">GATE</option>
             </SelectField>
-            <InputField label='Email' id='email' name='email' />
-            <InputField label='Password' id='password' name='password' type='password' />
-            <InputField label='Confirm Password' id='password2' name='password2' type='password' />
+            <InputField label='Email' id='email' name='email' required />
+            <SelectField label="Gender" name="gender" required>
+                <option value={undefined} disabled selected>Select your gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Others">Others</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+            </SelectField>
+            <InputField label='Password' id='password' name='password' type='password' required />
+            <InputField label='Confirm Password' id='password2' name='password2' type='password' required />
             <button className="btn primary mt-4">Sign Up</button>
             <p className="d-inline pl-2">OR <BtnLink to='/auth/login' text='Login' /> instead.</p>
         </Form>

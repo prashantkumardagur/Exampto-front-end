@@ -5,6 +5,7 @@ import InputField from '../components/ui/Forms/InputField';
 import SelectField from '../components/ui/Forms/SelectField';
 
 import AuthContext from '../store/AuthContext';
+import AppContext from '../store/AppContext';
 import { changePasswordAPI, updateProfileAPI } from '../api/auth';
 
 
@@ -12,6 +13,7 @@ import { changePasswordAPI, updateProfileAPI } from '../api/auth';
 
 const ProfilePage = (props) => {
   const { token, person, updatePerson } = useContext(AuthContext);
+  const { showAlert } = useContext(AppContext);
 
 
   const passwordSubmitHandler = async (e) => {
@@ -23,7 +25,7 @@ const ProfilePage = (props) => {
     };
 
     const response = await changePasswordAPI(token, data);
-    console.log(response);
+    if(response.status === 'success') showAlert("Password changed successfully");
     e.target.reset();
 
   }
@@ -37,11 +39,11 @@ const ProfilePage = (props) => {
       gender: formData.get('gender'),
       program: formData.get('program')
     };
-    console.log(data);
 
     const response  = await updateProfileAPI(token, data);
-    console.log(response);
-    if(response.status === 'success') updatePerson(data);
+    if(response.status !== 'success') { console.log(response.message); return; }
+    updatePerson(data);
+    showAlert("Profile updated successfully");
   }
 
 
@@ -76,12 +78,13 @@ const ProfilePage = (props) => {
         </SelectField>
       </div>
       <div className="grid-md-2 gap-3">
-        <InputField label="Phone" type="text" name="phone" id="profile-phone" value={person.phone} required/>
+        <InputField label="Whatsapp Number" type="text" name="phone" id="profile-phone" value={person.phone} required/>
         <SelectField label="Gender" name="gender" defaultValue={person.gender} id="profile-gender" required>
-          <option value={undefined} disabled>Select you gender</option>
+          <option value={undefined} disabled>Select your gender</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Others">Others</option>
+          <option value="Prefer not to say">Prefer not to say</option>
         </SelectField>
       </div>
       <button className="btn primary mt-4" type='submit'>Update Profile</button>

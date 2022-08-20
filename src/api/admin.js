@@ -21,7 +21,19 @@ export const toggleBanAPI = async (token, id) => {
   return await runAPI("/admin/toggle-ban", token, {id});
 }
 
+
+
 // Get messages
 export const getMessagesAPI = async (token) => {
   return await runAPI("/admin/get-messages", token);
+}
+
+// Toggle resolve of a message
+export const toggleResolveAPI = async (token, id) => {
+  return await runAPI("/admin/toggle-message-resolve", token, {id});
+}
+
+// Delete a message
+export const deleteMessageAPI = async (token, id) => {
+  return await runAPI("/admin/delete-message", token, {id});
 }

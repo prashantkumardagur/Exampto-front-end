@@ -9,6 +9,11 @@
 
 
 
+.not-found img{width: 500px; max-width: 90vw;}
+.not-found h1{font-size: 30px;}
+
+
+
 .navbar{ top: 0; height: 60px; border-bottom: 2px solid var(--shadow); background-color: white; z-index: 999;}
 .navbar .leadingName{color: black;}
 .navbar img{height: 40px;}
