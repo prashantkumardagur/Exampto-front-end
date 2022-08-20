@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from "react";
 
 import Section from "../../components/dashboard/Section";
 import ResultList from "../../components/user/ResultList";
+import DataItem from "../../components/ui/DataItem";
 
 import AuthContext from "../../store/AuthContext";
 import { getResultsAPI } from "../../api/user";
@@ -34,7 +35,12 @@ const ResultSection = () => {
 
 
   return (<>
-    <Section heading="Analytics" placeholder />
+    <Section heading="Analytics" >
+      <div className="grid-2 gap-2">
+        <DataItem heading='Total Participation' value={results ? results.length : 0} />
+        <DataItem heading='Total Earnings' value={0} />
+      </div>
+    </Section>
     <Section heading="Your results" >
       <ResultList results={results} />
     </Section>

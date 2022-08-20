@@ -6,7 +6,7 @@ import FileAccess from '../dashboard/Fileaccess';
 import DataItem from '../ui/DataItem';
 import PageLoader from '../../components/ui/PageLoader';
 
-import { getResultAPI, downloadSolutionAPI } from '../../api/user';
+import { getResultAPI, downloadSolutionAPI} from '../../api/user';
 import AuthContext from '../../store/AuthContext';
 import ContentList from '../dashboard/ContentList';
 
@@ -61,10 +61,10 @@ const ViewResults = (props) => {
   return (<>
     <Section heading='View Results'>
       <div className="grid-2 gap-2">
-        <DataItem heading='Marks Scored' value='0' />
-        <DataItem heading='Average Score' value='0' />
-        <DataItem heading='Rank' value='0' />
-        <DataItem heading='Percentile' value='0' />
+        <DataItem heading='Marks Scored' value={result.marksAllocated} />
+        <DataItem heading='Earning' value={0} />
+        <DataItem heading='Rank' value={result.rank} />
+        <DataItem heading='Percentile' value={result.percentile} />
       </div>
       { exam.solutions > 0 
         ? <FileAccess text={`Solution PDF (${size})`} className='mt-4' api={downloadSolutionAPI} data={exam._id} fileName='solution.pdf' />

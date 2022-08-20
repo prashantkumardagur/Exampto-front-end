@@ -8,6 +8,7 @@ import InputField from "../../components/ui/Forms/InputField";
 import LoadingIcon from "../../components/ui/LoadingIcon";
 
 import { signUpAPI } from "../../api/auth";
+import SelectField from "../../components/ui/Forms/SelectField";
 
 
 
@@ -28,7 +29,8 @@ const SignUpPage = () => {
         const data = {
             name: formData.get("name"),
             email: formData.get("email"),
-            password: formData.get("password")
+            password: formData.get("password"),
+            program: formData.get("program")
         };
 
         if(data.password !== password2) {
@@ -56,6 +58,15 @@ const SignUpPage = () => {
         {state && <DataBox content={state.msg} color={state.color} size='small' />}
         <Form onSubmit={submitHandler}>
             <InputField label='Name' id='name' name='name' />
+            <SelectField label='Program' name='program' defaultValue='JEE' >
+                <option value="JEE">JEE</option>
+                <option value="NEET">NEET</option>
+                <option value='CDS'>CDS</option>
+                <option value='BANK'>BANK</option>
+                <option value='NDA'>NDA</option>
+                <option value='UPSC'>UPSC</option>
+                <option value="GATE">GATE</option>
+            </SelectField>
             <InputField label='Email' id='email' name='email' />
             <InputField label='Password' id='password' name='password' type='password' />
             <InputField label='Confirm Password' id='password2' name='password2' type='password' />

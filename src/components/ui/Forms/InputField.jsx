@@ -1,10 +1,32 @@
-import React from "react";
+import React, {useState} from "react";
+import IconHolder from "../IconHolder";
+
+
+
 
 const InputField = React.forwardRef((props, ref) => {
-  return (<section>
+  const [inputType, setInputType] = useState(props.type)
+  const [visibilityIcon, setVisibilityIcon] = useState('visibility');
+
+
+
+  const visibilityHandler = (e) => {
+    if(inputType === 'password'){
+      setInputType('text');
+      setVisibilityIcon('visibility_off');
+    } else {
+      setInputType('password');
+      setVisibilityIcon('visibility');
+    }
+  }
+
+
+
+
+  return (<section className="p-relative">
     <label htmlFor={props.id}>{props.label}</label>
     <input 
-      type={props.type} 
+      type={inputType} 
       name={props.name} 
       id={props.id} 
       defaultValue={props.value}
@@ -20,6 +42,14 @@ const InputField = React.forwardRef((props, ref) => {
       required={props.required}
       disabled={props.disabled}
       readOnly={props.readOnly}
+      
+      style={props.type === "password" ? {paddingRight: '30px'} : {}}
+    />
+    <IconHolder 
+      className='password-visibility-icon p-absolute cursor-pointer'
+      icon={visibilityIcon} 
+      style={ props.type === "password" ? {} : {display: 'none'} }
+      onClick={visibilityHandler}
     />
   </section>);
 })

@@ -34,7 +34,8 @@ const ProfilePage = (props) => {
     const data = {
       phone: formData.get('phone'),
       name: formData.get('name'),
-      gender: formData.get('gender')
+      gender: formData.get('gender'),
+      program: formData.get('program')
     };
     console.log(data);
 
@@ -62,7 +63,18 @@ const ProfilePage = (props) => {
 
     <Form className="mt-6" onSubmit={profileSubmitHandler}>
       <h6 className="mb-1 accent1 ch">Personal</h6>
-      <InputField label="Full Name" type="text" name="name" id="profile-name" value={person.name} required/>
+      <div className="grid-md-2 gap-3">
+        <InputField label="Full Name" type="text" name="name" id="profile-name" value={person.name} required/>
+        <SelectField label="Program" name="program" defaultValue={person.program} id="profile-program" required>
+          <option value="JEE">JEE</option>
+          <option value="NEET">NEET</option>
+          <option value='CDS'>CDS</option>
+          <option value='BANK'>BANK</option>
+          <option value='NDA'>NDA</option>
+          <option value='UPSC'>UPSC</option>
+          <option value="GATE">GATE</option>
+        </SelectField>
+      </div>
       <div className="grid-md-2 gap-3">
         <InputField label="Phone" type="text" name="phone" id="profile-phone" value={person.phone} required/>
         <SelectField label="Gender" name="gender" defaultValue={person.gender} id="profile-gender" required>

@@ -101,6 +101,12 @@
 /*=====================================================================================================*/
 
 
+.recieved-message{border-top: 2px solid var(--shadow);}
+
+
+/*=====================================================================================================*/
+
+
 .authForm{max-width: 400px;}
 
 
@@ -177,6 +183,7 @@ label{font-size: 15px; font-weight: 500; padding-top: 15px;}
 input, textarea, select{border: 1px solid #aaa; padding: 6px 10px; border-radius: 5px;
   color: var(--txt1); background-color: var(--bg2);}
 input:disabled, input:read-only{background-color: var(--bg3); color: var(--txt2);}
+.password-visibility-icon{right: 6px; bottom: 5px;}
 .checkbox{ margin-top: 5px;}
 .checkbox input{ display: inline; width: auto;}
 .checkbox label{ display: inline; padding: 0 0 0 10px; font-weight: 400;}

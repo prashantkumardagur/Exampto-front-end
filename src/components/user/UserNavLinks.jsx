@@ -10,13 +10,13 @@ const UserNavLinks = () => {
       <li>
         <NavLink to='/user/exams' className={checkActive}>
           <IconHolder icon='backup_table' color='#f00' /> 
-          Mock Exams
+          Contests
         </NavLink>
       </li>
       <li>
         <NavLink to='/user/practice' className={checkActive}>
           <IconHolder icon='edit_note' color='var(--accent1)' /> 
-          Practice Tests
+          Practice
         </NavLink>
       </li>
       <li>
