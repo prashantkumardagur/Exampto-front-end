@@ -9,8 +9,7 @@
 
 
 
-.not-found img{width: 500px; max-width: 90vw;}
-.not-found h1{font-size: 30px;}
+.not-found img{width: 800px; max-width: 90vw;}
 
 
 
@@ -103,7 +102,7 @@
 
 
 
-.contact-form{background-color: var(--home-accent); border-radius: 20px;}
+.contact-form{background-color: var(--home-accent); border-radius: 20px; height: fit-content;}
 
 
 
@@ -113,6 +112,10 @@
 .content-page aside a{ color: var(--txt2); padding: 2px 0; display: block;}
 .content-page aside a:hover{ color: var(--txt1); text-decoration: underline;}
 .content-page aside a.is-active{ color: var(--accent1); font-weight: 500;}
+
+.contact-option{display: flex; align-items: center; margin-bottom: 10px;}
+.contact-option .iconHolder{background-color: #2b084c; border-radius: 50%; margin-right: 10px;}
+
 
 .info-div h1{margin: 50px 0 0px;}
 .info-div h2{padding: 80px 0 25px;}

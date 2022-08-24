@@ -45,8 +45,23 @@ const ContactUs = (props) => {
       <div className="contact-content">
         <h5 className="haccent">Send us a message</h5>
         <h5 className="big-heading my-3">Have any questions?<br/>Let's start to talk</h5>
-        <p className="fs-4 txt2 mb-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi voluptatum minima 
+        <p className="fs-4 txt2 mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi voluptatum minima 
           natus commodi reiciendis, autem ex unde sequi. Aperiam, quis!</p>
+
+        <div className="contact-options mb-6">
+          <div className="contact-option">
+            <IconHolder icon="phone" color="white" fontSize="1.4em" size="1.6em" />
+            <p className="fs-4 fs-md-5 txt2">+91 966 428 0703</p>
+          </div>
+          <div className="contact-option">
+            <IconHolder icon="email" color="white" fontSize="1.4em" size="1.6em" />
+            <p className="fs-4 fs-md-5 txt2">help@exampto.com</p>
+          </div>
+          <div className="contact-option">
+            <IconHolder icon="location_on" color="white" fontSize="1.4em" size="1.6em" />
+            <p className="fs-4 fs-md-5 txt2">117 B-block, Panchkula heights, Zirakpur, Punjab - 160104</p>
+          </div>
+        </div>
       </div>
 
       <Form className="contact-form p-3 white" onSubmit={submitHandler}>

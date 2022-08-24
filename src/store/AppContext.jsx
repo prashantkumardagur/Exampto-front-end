@@ -62,13 +62,13 @@ export const AppContextProvider = (props) => {
 
 
   // Function to show alert and hide it after some time
-  const showAlert = (text) => {
-    setAlert({text, show: true});
-    let alertTimeout = setTimeout(() => { setAlert({text, show: false}); }, 4000);
+  const showAlert = (text, type="success") => {
+    setAlert({text, show: true, type});
+    let alertTimeout = setTimeout(() => { setAlert({text, show: false, type:"success"}); }, 4000);
 
     return () => {
       clearTimeout(alertTimeout);
-      setAlert({text, show: false});
+      setAlert({text, show: false, type:"success"});
     }
   }
 
@@ -81,7 +81,7 @@ export const AppContextProvider = (props) => {
         <Model content={model} onContinue={ handleContinue } onCancel={ handleCancel } />
       }
       {
-        <AlertBox text={alert.text} style={ alert.show ? {bottom: '20px'} : {bottom: '-60px'}} />
+        <AlertBox text={alert.text} type={alert.type} style={ alert.show ? {bottom: '20px'} : {bottom: '-60px'}} />
       }
       {props.children}
     </AppContext.Provider>

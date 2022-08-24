@@ -4,7 +4,7 @@ const IconHolder = (props) => {
   return (
   <span 
     className={`${props.className} iconHolder d-inflex flex-center`} 
-    style={{fontSize: props.fontSize, ...props.style}}
+    style={{fontSize: props.fontSize, ...props.style, width: props.size, height: props.size}}
     onClick={props.onClick}
   >
     <span className="material-symbols-outlined" style={{color: props.color, fontSize: 'inherit'}}>{props.icon}</span>
@@ -17,6 +17,7 @@ IconHolder.defaultProps = {
   color: 'var(--txt2)',
   fontSize: '1.2em',
   style: {},
+  size: '1.2em',
   onClick: () => {}
 }
 

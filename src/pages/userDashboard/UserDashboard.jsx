@@ -1,8 +1,11 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import React, { Suspense, useEffect, useState, useContext } from "react";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 import Navigation from "../../components/dashboard/Navigation";
 import PageLoader from "../../components/ui/PageLoader";
+
+import AuthContext from "../../store/AuthContext";
+
 
 const ExamSection = React.lazy(() => import('./ExamSection'));
 const PracticeSection = React.lazy(() => import('./PracticeSection'));
@@ -16,14 +19,20 @@ const NotFound = React.lazy(() => import('../404'));
 
 
 const UserDashboard = () => {
+  const navigate = useNavigate();
+  const { role, isLoggedIn } = useContext(AuthContext);
   const [navVisibility, setNavVisibility] = useState(true);
 
 
   useEffect(() => {
+    if(!isLoggedIn || role !== 'user') {
+      navigate('/auth/login');
+    }
+
     if(window.innerWidth < 768) {
       setNavVisibility(false);
     }
-  }, []);
+  }, [isLoggedIn, role, navigate]);
 
 
 

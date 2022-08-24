@@ -23,14 +23,14 @@ const TermsAndConditions = (props) => {
   <div id="info-Introduction">
     <h2>Introduction</h2>
     <p>Welcome to <strong>Exampto</strong></p>
-    <p>These Terms of Portal govern your use of our website located at <strong>Exampto.com</strong> 
+    <p>These Terms of Portal govern your use of our website located at <strong>Exampto.com </strong> 
         operated by <strong>Exampto.</strong></p>
     <p>Our Privacy Policy also governs your use of our <strong>Portal which is Exampto website</strong> and explains 
         how we collect, safeguard and disclose information that results from your use of our Website.</p>
     <p>Your agreement with us includes these Terms and our Privacy Policy .You acknowledge that you have read and 
         understood Agreements, and agree to be bound of them.</p>
-    <p>If you do not agree with Agreements, then you may not use the Portal, but please let us know by emailing at 
-        <strong>Help@exampto.com</strong> so we can try to find a solution. These Terms apply to all visitors, 
+    <p>If you do not agree with Agreements, then you may not use the Portal, but please let us know by emailing at    
+        <strong> help@exampto.com</strong> so we can try to find a solution. These Terms apply to all visitors, 
         users and others who wish to access or use our Portal.</p>
   </div>
 
@@ -38,7 +38,7 @@ const TermsAndConditions = (props) => {
     <h2>Communications</h2>
     <p>By using our Portal, you agree to subscribe to newsletters, marketing or promotional materials and other 
         information we may send. However, you may opt out of receiving any, or all, of these communications from us by 
-        following the unsubscribe link or by emailing at Help@exampto.com.</p>
+        following the unsubscribe link or by emailing at help@exampto.com.</p>
   </div>
 
   <div id="info-Purchases">
@@ -147,14 +147,14 @@ const TermsAndConditions = (props) => {
         of any person or entity.</p>
     <p>If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has 
         been copied in a way that constitutes copyright infringement, please submit your claim via email to 
-        Help@exampto.com, with the subject line: “Copyright Infringement” </p>
+        help@exampto.com, with the subject line: “Copyright Infringement” </p>
     <p>You may be held accountable for damages for misrepresentation or bad-faith claims on the infringement of any 
         Content found on and/or through Portal on your copyright.</p>
   </div>
 
   <div id="info-Error-Reporting-and-Feedback">
     <h2>Error Reporting and Feedback</h2>
-    <p>You may provide us either directly at Help@exampto.com or via third party sites and tools with information 
+    <p>You may provide us either directly at help@exampto.com or via third party sites and tools with information 
         and feedback concerning errors, suggestions for improvements, ideas, problems, complaints, and other matters 
         related to our Portal . You acknowledge and agree that: (i) you shall not retain, acquire or assert any 
         intellectual property right or other right, title or interest in or to the Feedback; (ii) Company may have 
@@ -208,7 +208,7 @@ const TermsAndConditions = (props) => {
 
   <div id="info-Contact-Us">
     <h2>Contact Us</h2>
-    <p>Please send your feedback, comments, requests for technical support by email: Help@exampto.com.</p>
+    <p>Please send your feedback, comments, requests for technical support by email: help@exampto.com.</p>
   </div>
 
   </div>

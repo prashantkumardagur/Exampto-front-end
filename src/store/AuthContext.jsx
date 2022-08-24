@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import GlobalLoader from "../components/ui/GlobalLoader";
+
 import { refreshTokenAPI, loginAPI } from "../api/auth";
 
 
@@ -26,6 +28,7 @@ export const AuthContextProvider = (props) => {
 
   const [token, setToken] = useState(null);
   const [person, setPerson] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
 
   // Effect to refresh the token on mount
@@ -55,6 +58,7 @@ export const AuthContextProvider = (props) => {
           localStorage.removeItem('expiry');
         }
       }
+      setIsLoading(false);
 
     }
 
@@ -109,6 +113,8 @@ export const AuthContextProvider = (props) => {
     login,
     logout,
   }
+
+  if(isLoading) return <GlobalLoader />;
 
   return (
     <AuthContext.Provider value={authContextValue}>

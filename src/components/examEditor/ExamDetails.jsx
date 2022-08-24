@@ -20,10 +20,11 @@ const ExamDetails = () => {
 
   const navigate = useNavigate();
   const { exam, setExam, token } = useContext(EditorContext);
-  const { setModel } = useContext(AppContext);
+  const { setModel, showAlert } = useContext(AppContext);
 
 
   const [btnState, setBtnState] = useState('Make sure to save changes.');
+  const [haveChanges, setHaveChanges] = useState(false);
 
   let category = exam.category;
   const categoryChangeHandler = (newValue) => { category = newValue; }
@@ -63,6 +64,7 @@ const ExamDetails = () => {
         }
       });
     setBtnState('Changes saved successfully.');
+    setHaveChanges(false);
   }
 
 
@@ -76,11 +78,15 @@ const ExamDetails = () => {
 
   // Handles publish exam button click
   const publishHandler = async () => {
-    setModel({
-      heading: "Publish Exam?",
-      text: "Are you sure you want to publish this exam? You won't be able to make any changes after publishing.",
-      onContinue: publishExam,
-    })
+    if(haveChanges){
+      showAlert('You have unsaved changes. Please save them before publishing.', 'error');
+    } else {
+      setModel({
+        heading: "Publish Exam?",
+        text: "Are you sure you want to publish this exam? You won't be able to make any changes after publishing.",
+        onContinue: publishExam,
+      })
+    }
   }
 
 
@@ -106,7 +112,7 @@ const ExamDetails = () => {
   return (<>
   <h2>Exam Details</h2>
 
-  <Form onSubmit={submitHandler} onChange={(e) => { setBtnState('Make sure to save changes.'); }}>
+  <Form onSubmit={submitHandler} onChange={(e) => { setBtnState('Make sure to save changes.'); setHaveChanges(true); }}>
     <h6 className="ch accent1 mt-5">Basic Info</h6>
     <InputField label='Exam Name' id='examName' name='name' type='text' value={exam.name} minLength='3' maxLength='64' />
     <div className="grid-md-2 gap-3">
