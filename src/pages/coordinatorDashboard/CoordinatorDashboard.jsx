@@ -25,7 +25,7 @@ const UserDashboard = () => {
 
 
   useEffect(() => {
-		if(!isLoggedIn || role !== 'user') {
+		if(!isLoggedIn || role !== 'coordinator') {
 			navigate('/auth/login');
 		}
     if(window.innerWidth < 768) {
