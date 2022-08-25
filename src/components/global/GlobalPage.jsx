@@ -12,6 +12,8 @@ const TermsAndConditions = React.lazy(() => import('../../pages/global/TermsAndC
 const PrivacyPolicy = React.lazy(() => import('../../pages/global/PrivacyPolicy'));
 const AboutUs = React.lazy(() => import('../../pages/global/AboutUs'));
 const ContactUs = React.lazy(() => import('../../pages/global/ContactUs'));
+const RefundPolicy = React.lazy(() => import('../../pages/global/RefundPolicy'));
+
 const NotFound = React.lazy(() => import('../../pages/404'));
 
 
@@ -30,6 +32,7 @@ const GlobalPage = () => {
           <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/contact-us' element={<ContactUs />} />
+          <Route path='/refund-policy' element={<RefundPolicy />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Suspense>

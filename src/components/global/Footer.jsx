@@ -25,7 +25,7 @@ const Footer = (props) => {
           <ul className="footer-links mt-3">
             <li><Link to={'/contact-us'} >Contact Us</Link></li>
             <li><Link to={'/'} >Guidelines</Link></li>
-            <li><Link to={'/'} >Refund Policy</Link></li>
+            <li><Link to={'/refund-policy'} >Refund Policy</Link></li>
             <li><Link to={'/'} >Sitemap</Link></li>
           </ul>
         </div>
