@@ -10,9 +10,12 @@
     --white: #fff;
     --grey: #555;
     --red: #f00;
+    --green: #0f0;
+    --blue: #00f;
 
     --red-bg: #ffdddd;
     --green-bg: #aaffaa;
+    --blue-bg: #ddddff;
 
     --shadow: #ddd;
     --overlay: #0002;

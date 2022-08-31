@@ -37,3 +37,25 @@ export const toggleResolveAPI = async (token, id) => {
 export const deleteMessageAPI = async (token, id) => {
   return await runAPI("/admin/delete-message", token, {id});
 }
+
+
+
+// Get all payments
+export const getPaymentsAPI = async (token) => {
+  return await runAPI("/admin/get-payments", token);
+}
+
+// Get pending payments
+export const getPendingPaymentsAPI = async (token) => {
+  return await runAPI("/admin/get-pending-payments", token);
+}
+
+// Reject payment request
+export const rejectPaymentAPI = async (token, id) => {
+  return await runAPI("/admin/reject-payment", token, {id});
+}
+
+// Approve payment request
+export const approvePaymentAPI = async (token, data) => {
+  return await runAPI("/admin/approve-payment", token, data);
+}

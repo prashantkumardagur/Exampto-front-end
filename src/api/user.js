@@ -46,3 +46,18 @@ export const getExamsAPI = async (token) => {
 export const getResultsAPI = async (token) => {
   return await runAPI("/user/get-results", token);
 }
+
+// Gets wallet data for a user
+export const getWalletAPI = async (token) => {
+  return await runAPI("/user/get-wallet", token);
+}
+
+// Update withdraw details for a user
+export const updateWithdrawDetailsAPI = async (token, data) => {
+  return await runAPI("/user/update-withdraw-details", token, data);
+}
+
+// Request withdraw for a user
+export const requestWithdrawAPI = async (token, data) => {
+  return await runAPI("/user/request-withdraw", token, data);
+}

@@ -9,9 +9,9 @@ const HeroSection = () => {
 
       <div className="hero-content p-relative">
         <h1 className='w500'>Are you the Next Champion?!</h1>
-        <p className='fs-4 my-5'>Welcome to EXAMPTO - India’s Trusted Platform for Exam based Battleground. 
-          Exampto Provides Gamified platform to Practice, Compete and Win Real Cash from different exams oriented 
-          tests curated by TOP Educators .Start your journey and Lets Showcase the world your Real talent.
+        <p className='fs-4 my-5'>Welcome to EXAMPTO - India’s Trusted Platform for Exam-based Battleground. 
+        We provide a Gamified platform to Practice, Compete and Win Real Cash from different exams that TOP 
+        Educators curate. Start your journey with us. Let us showcase your Talent.
         </p>
         <div className="hero-btn d-md-flex align-center">
           <Hbtn to="/auth/signup" className="mr-3" >Sign Up Now</Hbtn>
@@ -25,7 +25,7 @@ const HeroSection = () => {
       <div className="hero-decoration">
         <div className="gradient-circle p-absolute"></div>
         <div className='hero-image-div p-relative mt-7'>
-          <img src="/images/decoration/digital-product.webp" alt='decoration' className='hero-image-1' />
+          <img src="/images/decoration/heroImage.png" alt='decoration' className='hero-image-1' />
         </div>
         <img src="/images/decoration/product-star.png" alt='decoration' className='p-absolute hero-image-2' />
       </div>

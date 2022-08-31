@@ -17,7 +17,7 @@ const ViewExamPage = () => {
 
   const { id } = useParams();
   const { token } = useContext(AuthContext);
-  const { setModel } = useContext(AppContext);
+  const { setModel, showAlert } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [isEnrolled, setIsEnrolled] = useState(false);
@@ -52,9 +52,9 @@ const ViewExamPage = () => {
 
   const enrollInExam = useCallback( async () => {
     const response = await enrollAPI(token, id);
-    if(response.status !== 'success') { console.log(response.message); return; }
+    if(response.status !== 'success') { showAlert(response.message); return; }
     setIsEnrolled(true);
-  }, [id, token]);
+  }, [id, token, showAlert]);
   // Handle Enroll action
   const enrollHandler = useCallback(() => {
     setModel({

@@ -6,11 +6,11 @@ import NewsletterForm from "./NewsletterForm";
 
 const OtherSections = (props) => {
   return (<>
-    <div className='home-features' id='features' style={{marginTop: "50vw"}}>
+    <div className='home-features' id='features' style={{marginTop: "40vw"}}>
 
       <div className="home-feature grid-md-2 gap-3">
         <div className="feature-image">
-          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-5' />
+          <img src="/images/decoration/ChooseandCompete.png" alt='feature' className='ml-md-auto mr-md-6' />
         </div>
         <div className="feature-content">
           <h4 className='haccent'>Choose and Compete</h4>
@@ -25,18 +25,18 @@ const OtherSections = (props) => {
         <div className="feature-content">
           <h4 className='haccent'>Challenge Zone</h4>
           <h5 className='my-3'>Customized contests for every subjects</h5>
-          <p className='txt2 fs-4 mb-4'>Decide your subject and  Challenge your friend/group for 1V1/Team 
-          match. We will arrange Customized contest according to Subject.</p>
+          <p className='txt2 fs-4 mb-4'>Challenge your friends and find out if they are smart enough to beat you 
+          in your favorite subject.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
         <div className="feature-image">
-          <img src="/images/decoration/feature2.webp" alt='feature' className='mr-md-auto ml-md-5' />
+          <img src="/images/decoration/ChallengeZone.png" alt='feature' className='mr-md-auto ml-md-6' />
         </div>
       </div>
 
       <div className="home-feature grid-md-2 gap-3">
         <div className="feature-image">
-          <img src="/images/decoration/feature1.webp" alt='feature' className='ml-md-auto mr-md-5' />
+          <img src="/images/decoration/PracticeWithAnalysis.png" alt='feature' className='ml-md-auto mr-md-6' />
         </div>
         <div className="feature-content">
           <h4 className='haccent'>Practice with Analysis</h4>
@@ -78,12 +78,12 @@ const OtherSections = (props) => {
       <div className="home-feature d-grid grid-md-2 gap-md-1" style={{marginBottom: '60px'}}>
         <div className="feature-content">
           <h4 className="haccent">Who are you?</h4>
-          <h5 className='my-3'>You can be the superstar of your favorite subject</h5>
+          <h5 className='my-3'>Become the Superstar of your favorite subject.</h5>
           <div className="d-grid quoted gap-2">
             <img src="/images/decoration/left-quote.png" alt="quote" />
             <p className="txt2 fs-4 mb-2 w500">
-              You might be famous in your home, school or city but exmpto gives you the chance to become superstar of 
-              subject and let the whole country know who are the real talented superstars whom they should follow.
+            Exampto gives you the chance to become the Superstar of your favorite subject. 
+            Let the whole country that you are the OG!
             </p>
           </div>
         </div>
@@ -104,8 +104,10 @@ const OtherSections = (props) => {
           <div>
             <img src="/images/profile1.jpg" alt="achiever" />
             <h6>Virat Thakur</h6>
-            <p>Hii! I am Virat Thakur. I am preparing for SBI and IBPS PO. I really appreciate exampto for 
-              providing such a good platform for students so we can learn and earn simultaneously.</p>
+            <p>What attracted me is the power of the platform with an amazing variety of contests, connections, 
+              and learning opportunities to help grow, unleash potential and succeed. I am preparing for SBI and 
+              IBPS PO. This platform boosted my confidence when I started earning money for my good performance 
+              in the exams.</p>
           </div>
           <div>
             <img src="/images/decoration/winner1.jpeg" alt="achiever" />
@@ -113,8 +115,9 @@ const OtherSections = (props) => {
           <div>
             <img src="/images/profile2.jpg" alt="achiever" />
             <h6>Shubham Mishra</h6>
-            <p>Hello, I am Shubham Mishra I am preparing for SSC CGL, I love the way exampto helping aspirant 
-              in acheving their dreams.</p>
+            <p>This platform is engaging and interactive to build relevant knowledge which will help you in 
+              preparing for competitive exams. I love the array of personalized contests and analyses to help 
+              improve the participant’s performance.</p>
           </div>
         </div>
       </div>
@@ -122,7 +125,7 @@ const OtherSections = (props) => {
 
     <div className="home-ending text-center p-relative">
       <h4>Ready to start learning?</h4>
-      <h5 className="w500 mt-4">Enter your email for an invite!</h5>
+      <h5 className="w500 mt-4">Don’t miss our new updates</h5>
       <NewsletterForm />
       <img src="/images/decoration/newsletter-human.webp" alt="decoration" className="p-absolute d-mob-none" />
       <img src="/images/decoration/rocket.webp" alt="decoration" className="p-absolute d-mob-none" />

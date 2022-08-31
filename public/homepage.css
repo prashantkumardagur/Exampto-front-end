@@ -47,7 +47,7 @@
 .hero-section p{color: #aaa; padding: 0 15vw 0 10px; border-left: 2px solid var(--accent2); line-height: 180%;}
 
 .hero-image-div{ height: 10vw; width: 80vw;}
-.hero-image-1{ width: 80vw;}
+.hero-image-1{ width: 50vw; margin: auto;}
 .hero-image-2{width: 30vw; top: 10vh; right: 1vw; width: 12vw;}
 
 .gradient-circle{width: 1px; height: 1px; border-radius: 50%; background-color: var(--accent2);
@@ -56,7 +56,7 @@
 
 .home-features{padding: 80px 10vw;}
 .home-feature{align-items: center; margin-bottom: 180px;}
-.home-feature img{width: 30vw; max-width: 500px;}
+.home-feature img{width: 30vw; max-width: 500px; max-height: 500px;}
 .home-feature h5{font-size: 40px; line-height: 120%;}
 .home-feature p{line-height: 160%;}
 .home-feature ul{list-style-type: "\2714"; margin-left: 1em;}
@@ -91,7 +91,6 @@
 
 .home-plans img{width: 60%; border-radius: 50%; margin: auto;}
 .home-plans h6{font-size: 22px; padding: 40px 0 10px; color: #ff503d;}
-.home-plans p{font-size: 18px;}
 
 .home-ending{background-color: #2b084c; color: white; padding: 110px 10vw;}
 .home-ending h4{font-size: 40px;}

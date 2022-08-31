@@ -26,6 +26,12 @@ const AdminNavLinks = () => {
         </NavLink>
       </li>
       <li>
+        <NavLink to='/admin/payments' className={checkActive}>
+          <IconHolder icon='account_balance_wallet' color='#16dd00' /> 
+          Payments
+        </NavLink>
+      </li>
+      <li>
         <NavLink to='/admin/messages' className={checkActive}>
           <IconHolder icon='chat' color='#0652dd' /> 
           Messages

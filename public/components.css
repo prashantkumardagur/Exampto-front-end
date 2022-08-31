@@ -86,7 +86,8 @@
 /*=====================================================================================================*/
 
 
-.people-list .d-grid{grid-template-columns: 50px 2fr 3fr 80px; gap: 20px; border-radius: 5px; padding: 5px;}
+.people-list{width: 100%; overflow-x: scroll;}
+.people-list .d-grid{grid-template-columns: 50px 2fr 3fr 80px; gap: 20px; border-radius: 5px; padding: 5px; min-width: 650px;}
 .people-list .d-grid:nth-of-type(1):hover{ background-color: transparent; }
 .people-list .d-grid:hover{ background-color: var(--light-accent-bg); }
 .t-head{font-weight: 500;}
@@ -187,3 +188,16 @@ input:disabled, input:read-only{background-color: var(--bg3); color: var(--txt2)
 .checkbox{ margin-top: 5px;}
 .checkbox input{ display: inline; width: auto;}
 .checkbox label{ display: inline; padding: 0 0 0 10px; font-weight: 400;}
+
+
+
+/*=====================================================================================================*/
+
+.transaction{
+  grid-template-columns: 1fr 100px; border-top: 1px solid var(--shadow);
+}
+
+.payment-list{ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));}
+.payment-card{ border: 2px solid var(--shadow); max-width: 500px; padding: 10px 15px;}
+.payment-model{ background-color: var(--bg1); padding: 20px; border-radius: 20px; width: 500px; max-width: 96vw;}
+.payment-model .iconBtn{right: 12px; top: 10px;}

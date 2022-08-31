@@ -58,6 +58,8 @@ export const AuthContextProvider = (props) => {
           localStorage.removeItem('expiry');
         }
       }
+
+      
       setIsLoading(false);
 
     }

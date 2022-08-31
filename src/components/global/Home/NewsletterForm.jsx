@@ -16,7 +16,7 @@ const NewsletterForm = (props) => {
   let statusOutput = '';
   switch (status) {
     case 1: statusOutput = <button className={`hbtn d-inflex t-2 htype1 mt-2`} style={{border: 'none'}}>
-                            Subscribe to newletter
+                            Subscribe to Newletter
                             <IconHolder icon="east" color="white" className="ml-2" />
                           </button>
                           break;

@@ -39,9 +39,11 @@ const InputField = React.forwardRef((props, ref) => {
       minLength={props.minLength}
       maxLength={props.maxLength}
       placeholder={props.placeholder}
+
       required={props.required}
       disabled={props.disabled}
       readOnly={props.readOnly}
+      autoComplete={props.autoComplete}
       
       style={props.type === "password" ? {paddingRight: '30px'} : {}}
     />
@@ -69,6 +71,7 @@ InputField.defaultProps = {
   placeholder: '',
   disabled: false,
   readOnly: false,
+  autoComplete: 'on',
 }
 
 export default React.memo(InputField);

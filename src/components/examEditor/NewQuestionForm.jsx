@@ -42,7 +42,7 @@ const NewQuestionForm = () => {
     if(response.status !== "success") { setBtnState(response.message); return; }
 
     e.target.reset();
-    optionRefs.current.forEach((ref) => ref.reset());
+    optionRefs.current.forEach((ref) => {if(ref !== null) ref.reset()});
     questionRef.current.reset();
     setBtnState("Question added successfully");
 
@@ -62,14 +62,15 @@ const NewQuestionForm = () => {
   const addOption = () => {
     if(optionNumber.length >= 6) return;
     setOptionNumber((prevState) => [...prevState, prevState.length + 1]);
+    console.log(optionRefs.current);
   }
 
   // Handles option number decrement
   const removeOption = () => {
     if(optionNumber.length <= 2) return;
+    optionRefs.current.pop().reset();
     setOptionNumber((prevState) => prevState.slice(0, prevState.length - 1));
   }
-
 
 
   
