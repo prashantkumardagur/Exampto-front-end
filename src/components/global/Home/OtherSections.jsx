@@ -6,7 +6,7 @@ import NewsletterForm from "./NewsletterForm";
 
 const OtherSections = (props) => {
   return (<>
-    <div className='home-features' id='features' style={{marginTop: "40vw"}}>
+    <div className='home-features' id='features' style={{marginTop: "10vw"}}>
 
       <div className="home-feature grid-md-2 gap-3">
         <div className="feature-image">

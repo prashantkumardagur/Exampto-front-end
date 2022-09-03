@@ -59,3 +59,13 @@ export const rejectPaymentAPI = async (token, id) => {
 export const approvePaymentAPI = async (token, data) => {
   return await runAPI("/admin/approve-payment", token, data);
 }
+
+// Changes email of a transaction
+export const changeTransactionEmailAPI = async (token, data) => {
+  return await runAPI("/admin/change-transaction-email", token, data);
+}
+
+// Add transaction to a user
+export const addTransactionAPI = async (token, data) => {
+  return await runAPI("/admin/add-transaction", token, data);
+}

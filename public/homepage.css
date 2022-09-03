@@ -47,11 +47,11 @@
 .hero-section p{color: #aaa; padding: 0 15vw 0 10px; border-left: 2px solid var(--accent2); line-height: 180%;}
 
 .hero-image-div{ height: 10vw; width: 80vw;}
-.hero-image-1{ width: 50vw; margin: auto;}
+.hero-image-1{ width: 40vw; margin: auto; right: 0; bottom: 0;}
 .hero-image-2{width: 30vw; top: 10vh; right: 1vw; width: 12vw;}
 
 .gradient-circle{width: 1px; height: 1px; border-radius: 50%; background-color: var(--accent2);
-  position: absolute; top: 90%; left: 70%; transform: translate(-50%, -50%); box-shadow: 0 0 500px 300px #ff6b1650;}
+  position: absolute; top: 80%; right: 20%; transform: translate(-50%, -50%); box-shadow: 0 0 400px 300px #ff6b1650;}
 
 
 .home-features{padding: 80px 10vw;}
@@ -147,7 +147,7 @@
     .menu-icon{color: black;}
     .navbar.dissolve-nav .menu-icon.home-nav-icon{color: white;}
 
-    .hero-section{padding: 120px 5vw 100px 5vw}
+    .hero-section{padding: 120px 5vw 300px 5vw}
     .hero-section h1{font-size: 50px; margin-top: 60px;}
     .hero-section p{line-height: 140%;}
 

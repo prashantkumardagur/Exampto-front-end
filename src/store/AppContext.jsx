@@ -81,7 +81,7 @@ export const AppContextProvider = (props) => {
         <Model content={model} onContinue={ handleContinue } onCancel={ handleCancel } />
       }
       {
-        <AlertBox text={alert.text} type={alert.type} style={ alert.show ? {bottom: '20px'} : {bottom: '-60px'}} />
+        <AlertBox text={alert.text} type={alert.type} style={ alert.show ? {bottom: '20px'} : {bottom: '-120px'}} />
       }
       {props.children}
     </AppContext.Provider>
