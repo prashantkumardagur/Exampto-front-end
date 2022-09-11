@@ -63,7 +63,11 @@ const NavBar = (props) => {
 		<div className={`d-block d-md-none ml-auto menu-icon ${props.home ? 'home-nav-icon' : ''}`} onClick={mobMenuHandler}>
 			<IconHolder color='inherit' icon='menu' fontSize="1.6rem" />
 		</div>
-		<ul className="nav-links-mob bg-white d-flex d-md-none gap-3 p-absolute p-3" style={isOpen ? null : {display: 'none'}}>
+		<ul className="nav-links-mob bg-white d-flex d-md-none gap-3 p-absolute p-3" 
+			style={isOpen ? null : {display: 'none'}}
+			onClick={mobMenuHandler}
+			>
+
 			<NavLink to="/">Home</NavLink>
 			<NavLink to="/contact-us">Contact Us</NavLink>
 			{authContext.isLoggedIn ? <>

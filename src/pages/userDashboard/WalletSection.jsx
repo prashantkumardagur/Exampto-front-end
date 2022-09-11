@@ -109,17 +109,17 @@ const WalletSection = () => {
       <Form onSubmit={updateHandler}>
         <div className="grid-md-2 gap-3">
           <InputField label="UPI ID" name="upiId" type="text" placeholder="Enter your VPA ID here." value={withdrawId} />
-          <p className="fs-2 pt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi placeat ipsa laudantium eos at earum tempore dolorum sit totam illo.</p>
+          <p className="fs-2 pt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi placeat ipsa laudantium eos at earum tempore.</p>
         </div>
-        <button className="btn primary small mt-2">Update</button>
+        <button className="btn primary small mt-1">Update</button>
       </Form>
       <Form onSubmit={withdrawHandler}>
-        <div className="grid-md-2 gap-3 mt-4">
+        <div className="grid-md-2 gap-3 mt-2">
           <InputField label="Amount" name="withdrawAmount" type="number" placeholder="Enter amount to withdraw." />
           <p className="fs-2 pt-4">It may take upto 7 days under process.</p>
         </div>
-        <button className="btn primary large d-inflex align-center gap-1 mt-3">
-          <IconHolder icon="savings" color="white" fontSize="1.5em" />
+        <button className="btn primary d-inflex align-center gap-1 mt-3">
+          <IconHolder icon="savings" color="white" fontSize="1.2em" />
           Request Withdraw
         </button>
       </Form>

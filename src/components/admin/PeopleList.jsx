@@ -57,6 +57,7 @@ const PeopleList = (props) => {
       <p className="t-head">S.No.</p>
       <p className="t-head">Name</p>
       <p className="t-head">Email</p>
+      <p className="t-head">Phone</p>
       <p className="t-head">Action</p>
     </div>
     {people.map((person, index) => 
@@ -64,6 +65,7 @@ const PeopleList = (props) => {
         <p>{index + 1}</p>
         <p>{person.name}</p>
         <p>{person.email}</p>
+        <p>{person.phone}</p>
         <p>
           { person.role === 'user' &&
             <button className="btn small primary mr-1" onClick={() => { setWalletState(person) }}>Wallet</button>

@@ -50,7 +50,7 @@ const OtherSections = (props) => {
     </div>
 
     <div className="home-feature-end p-relative mt-md-8">
-      <img src="/images/decoration/laptop-feature.webp" alt="decoration" className='m-auto p-absolute' />
+      <img src="/svg/data.svg" alt="decoration" className='m-auto p-absolute' />
     </div>
 
     <div className='home-features d-none mt-6'>

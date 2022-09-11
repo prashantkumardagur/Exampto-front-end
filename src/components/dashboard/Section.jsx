@@ -1,6 +1,10 @@
+import PageLoader from '../ui/PageLoader';
+
+
 const Section = (props) => {
   let content = props.children;
   if(props.placeholder) content = <div className="bg3" style={{height: '120px'}}></div>
+  if(props.loading) content = <PageLoader />;
 
   return (
     <section className="pb-7">

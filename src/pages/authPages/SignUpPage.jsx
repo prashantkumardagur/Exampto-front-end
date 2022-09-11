@@ -32,6 +32,7 @@ const SignUpPage = () => {
             password: formData.get("password"),
             program: formData.get("program"),
             gender: formData.get("gender"),
+            phone: formData.get("phone"),
         };
 
         if(data.password !== password2) {
@@ -69,6 +70,7 @@ const SignUpPage = () => {
                 <option value="GATE">GATE</option>
             </SelectField>
             <InputField label='Email' id='email' name='email' required />
+            <InputField label='Phone' id='phone' name='phone' required minLength='10' maxLength='10' type='tel' />
             <SelectField label="Gender" name="gender" required>
                 <option value={undefined} disabled selected>Select your gender</option>
                 <option value="Male">Male</option>

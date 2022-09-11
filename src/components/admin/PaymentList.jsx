@@ -9,7 +9,7 @@ import InputField from '../ui/Forms/InputField';
 
 import AuthContext from '../../store/AuthContext';
 import AppContext from '../../store/AppContext';
-import { getPendingPaymentsAPI, rejectPaymentAPI, approvePaymentAPI, getPaymentsAPI, changeTransactionEmailAPI } from '../../api/admin';
+import { getPendingPaymentsAPI, rejectPaymentAPI, approvePaymentAPI, getPaymentsAPI, changeTransactionEmailAPI, denyTransactionAPI } from '../../api/admin';
 
 
 
@@ -54,11 +54,12 @@ const PaymentCard = (props) => {
       : null
     }
     {
-      !data.user && <div>
+      !data.user && data.status=== 'pending' && <div>
         <Form onSubmit={emailChangeHandler}>
           <InputField label="Change Email to" name="newEmail" type="email" placeholder="Enter new email." required />
           {error && <p className='fs-2' style={{color: 'red'}}>{error}</p>}
-          <button className='btn primary small mt-2'>Change email</button>
+          <button className='btn primary small mt-2' type='submit'>Change email</button>
+          <button className='btn secondary small ml-1' type='button' onClick={props.denyHandler}>Delete</button>
         </Form>
       </div>
     }
@@ -131,6 +132,21 @@ const PaymentList = (props) => {
 
 
 
+  const denyHandler = (id) => {
+    setModel({
+      heading: 'Deny Payment',
+      text: 'Are you sure you want to deny this payment?',
+      onContinue: () => { denyTransaction(id) },
+    });
+  }
+  const denyTransaction = async (id) => {
+    let response = await denyTransactionAPI(token, id);
+    if(response.status !== 'success') { console.log(response.message); return; }
+    setData((prevList) =>  prevList.filter((payment) => payment._id !== id));
+  }
+
+
+
   const emailChangeHandler = async (email, id) => {
     let response = await changeTransactionEmailAPI(token, {email, id});
     if(response.status !== 'success') { return response.message; }
@@ -156,6 +172,7 @@ const PaymentList = (props) => {
                   data={payment} 
                   rejectHandler={() => { rejectHandler(payment._id) }} 
                   approveHandler={() => { approveHandler(payment._id) }}
+                  denyHandler={() => { denyHandler(payment._id) }}
                   emailChangeHandler={emailChangeHandler}
               />);
     })}

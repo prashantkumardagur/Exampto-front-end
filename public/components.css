@@ -87,13 +87,14 @@
 
 
 .people-list{width: 100%; overflow-x: scroll;}
-.people-list .d-grid{grid-template-columns: 50px 2fr 3fr 125px; gap: 20px; border-radius: 5px; padding: 5px; min-width: 650px;}
+.people-list .d-grid{grid-template-columns: 50px 2fr 3fr 100px 125px; gap: 20px; border-radius: 5px; padding: 5px; min-width: 780px;}
 .people-list .d-grid:nth-of-type(1):hover{ background-color: transparent; }
 .people-list .d-grid:hover{ background-color: var(--light-accent-bg); }
 .t-head{font-weight: 500;}
 
 
-.result-list .d-grid{grid-template-columns: 1fr 100px 100px 100px; gap: 20px; 
+.result-list{width: 100%; overflow-x: scroll;}
+.result-list .d-grid{grid-template-columns: 1fr 100px 100px 100px; gap: 20px; min-width: 650px; 
     border-radius: 5px; padding: 8px; color: var(--txt1); border-bottom: 1px solid var(--shadow);}
 .result-list .t-head:hover{ background-color: transparent !important; color: var(--txt1) !important; }
 .result-list .d-grid:hover{ background-color: var(--accent2); color: var(--black); } 

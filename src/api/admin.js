@@ -21,6 +21,11 @@ export const toggleBanAPI = async (token, id) => {
   return await runAPI("/admin/toggle-ban", token, {id});
 }
 
+// Get analytics data
+export const getAnalyticsAPI = async (token) => {
+  return await runAPI("/admin/get-analytics", token);
+}
+
 
 
 // Get messages
@@ -69,3 +74,9 @@ export const changeTransactionEmailAPI = async (token, data) => {
 export const addTransactionAPI = async (token, data) => {
   return await runAPI("/admin/add-transaction", token, data);
 }
+
+// Deny pending transaction
+export const denyTransactionAPI = async (token, id) => {
+  return await runAPI("/admin/deny-transaction", token, {id});
+}
+

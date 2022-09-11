@@ -3,6 +3,7 @@ import { useParams, useNavigate, Routes, Route } from "react-router-dom";
 
 import ExamDetails from "../../components/dashboard/ExamDetails";
 import ExamInstructions from "../../components/dashboard/ExamInstructions";
+import PrizeDistribution from "../../components/user/PrizeDistribution";
 import DataBox from "../../components/ui/DataBox";
 import ViewResults from "../../components/user/ViewResults";
 
@@ -148,7 +149,7 @@ const ViewExamPage = () => {
   return (<>
     <ExamDetails exam={exam} sideBtns={sideBtns} />
     <Routes>
-      <Route path="" element={<ExamInstructions type='user' />} />
+      <Route path="" element={<><ExamInstructions type='user' /><PrizeDistribution price={exam ? exam.price : 0} /></>} />
       <Route path="view-results" element={<ViewResults />} />
     </Routes>
   </>);
