@@ -12,6 +12,7 @@ const UserSection = React.lazy(() => import('./UserSection'));
 const CoordinatorSection = React.lazy(() => import('./CoordinatorSection'));
 const MessagesSection = React.lazy(() => import('./MessagesSection'));
 const PendingPayments = React.lazy(() => import('./PendingPayments'));
+const ProfilePage = React.lazy(() => import('../ProfilePage'));
 const NotFound = React.lazy(() => import('../404'));
 
 
@@ -48,6 +49,7 @@ const UserDashboard = () => {
 					<Route path='/coordinators' element={<CoordinatorSection />} />
 					<Route path="/messages" element={<MessagesSection />} />
 					<Route path='/payments' element={<PendingPayments />} />
+          <Route path='/profile' element={<ProfilePage />} />
 					<Route path='*' element={<NotFound home="analytics" />} />
 				</Routes>
 			</Suspense>

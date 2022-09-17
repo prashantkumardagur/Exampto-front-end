@@ -38,7 +38,7 @@ const AnalyticsSection = () => {
     };
 
     getAnalytics();
-  });
+  }, [token]);
 
 
 

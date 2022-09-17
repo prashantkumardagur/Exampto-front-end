@@ -25,3 +25,8 @@ export const getExamAPI = async (token, id) => {
 export const declareResultsAPI = async (token, id) => {
   return await runAPI("/coordinator/declare-result", token, { id });
 }
+
+// Get analytics data
+export const getAnalyticsAPI = async (token) => {
+  return await runAPI("/coordinator/get-analytics", token);
+}

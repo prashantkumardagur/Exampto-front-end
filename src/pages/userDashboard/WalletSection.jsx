@@ -27,6 +27,7 @@ const WalletSection = () => {
     return new Promise((resolve, reject) => {
 
       const script = document.createElement("script");
+      const btnHolder = document.getElementById("paymentBtnHolder");
 
       script.src = src;
       script.dataset.payment_button_id = btnId;
@@ -35,8 +36,8 @@ const WalletSection = () => {
       script.onload = resolve;
       script.onerror = reject;
 
-      document.getElementById("paymentBtnHolder").innerHTML = '';
-      document.getElementById("paymentBtnHolder").appendChild(script);
+      btnHolder.innerHTML = '';
+      btnHolder.appendChild(script);
     });
   }
 
@@ -99,6 +100,7 @@ const WalletSection = () => {
     <Section heading="Exampto Wallet">
       <DataItem heading="Balance" value={`₹ ${balance}`} />
       <div className="mt-4">
+        <p className="mb-1">Click below on button to add money to your wallet</p>
         <form id="paymentBtnHolder">
           <button className="btn primary">Loading</button>
         </form>
