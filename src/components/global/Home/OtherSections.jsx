@@ -15,7 +15,7 @@ const OtherSections = (props) => {
         <div className="feature-content">
           <h4 className='haccent'>Choose and Compete</h4>
           <h5 className='my-3'>Get the chance to Earn while you Learn</h5>
-          <p className='txt2 fs-4 mb-4'>Choose any Public Contest Based on your favourite Subject or Exam and win 
+          <p className='txt2 fs-4 mb-4 text-justify'>Choose any Public Contest Based on your favourite Subject or Exam and win 
             contest money with Live tracking of your Performance.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
@@ -25,7 +25,7 @@ const OtherSections = (props) => {
         <div className="feature-content">
           <h4 className='haccent'>Challenge Zone</h4>
           <h5 className='my-3'>Customized contests for every subjects</h5>
-          <p className='txt2 fs-4 mb-4'>Challenge your friends and find out if they are smart enough to beat you 
+          <p className='txt2 fs-4 mb-4 text-justify'>Challenge your friends and find out if they are smart enough to beat you 
           in your favorite subject.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
@@ -41,7 +41,7 @@ const OtherSections = (props) => {
         <div className="feature-content">
           <h4 className='haccent'>Practice with Analysis</h4>
           <h5 className='my-3'>Keep Practicing with personalized analysis</h5>
-          <p className='txt2 fs-4 mb-4'>Get Unlimited free Practice contest for any Exam/Subjects and get 
+          <p className='txt2 fs-4 mb-4 text-justify'>Get Unlimited free Practice contest for any Exam/Subjects and get 
           Personalized analysis of your Performance.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
@@ -61,7 +61,7 @@ const OtherSections = (props) => {
         <div className="feature-content">
           <h4 className='haccent'>Choose and Compete</h4>
           <h5 className='my-3'>Simple Design Prototyping and collaboration</h5>
-          <p className='txt2 fs-4 mb-2'>Choose any Public Contest Based on your favourite Subject or Exam and win 
+          <p className='txt2 fs-4 mb-2 text-justify'>Choose any Public Contest Based on your favourite Subject or Exam and win 
           contest money with Live tracking of your Performance.</p>
           <ul className='txt2 fs-4 mb-4'>
             <li><span>Unlimited design possibility</span></li>
@@ -81,7 +81,7 @@ const OtherSections = (props) => {
           <h5 className='my-3'>Become the Superstar of your favorite subject.</h5>
           <div className="d-grid quoted gap-2">
             <img src="/images/decoration/left-quote.png" alt="quote" />
-            <p className="txt2 fs-4 mb-2 w500">
+            <p className="txt2 fs-4 mb-2 w500 text-justify">
             Exampto gives you the chance to become the Superstar of your favorite subject. 
             Let the whole country that you are the OG!
             </p>

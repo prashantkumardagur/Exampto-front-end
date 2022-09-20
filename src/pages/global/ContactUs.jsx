@@ -44,9 +44,7 @@ const ContactUs = (props) => {
 
       <div className="contact-content">
         <h5 className="haccent">Send us a message</h5>
-        <h5 className="big-heading my-3">Have any questions?<br/>Let's start to talk</h5>
-        <p className="fs-4 txt2 mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi voluptatum minima 
-          natus commodi reiciendis, autem ex unde sequi. Aperiam, quis!</p>
+        <h5 className="big-heading mt-3 mb-5">Have any questions?<br/>Let's start to talk</h5>
 
         <div className="contact-options mb-6">
           <div className="contact-option">

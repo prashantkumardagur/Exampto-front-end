@@ -13,7 +13,7 @@ const ExamDetails = (props) => {
     <p>Number of questions : {exam.totalQuestions} </p>
     <p className="mb-2">Duration : {exam.duration} minutes</p>
     <p>Maximum Marks : {exam.totalQuestions * exam.marking.positive}</p>
-    <p className="mb-2">Positive : +{exam.marking.positive} | Negative : -{exam.marking.negative}</p>
+    <p className="mb-2">Positive : +{exam.marking.positive} | Negative : {exam.marking.negative * -1}</p>
     <DataBox color='black' icon='event' content={new Date(exam.startTime).toLocaleString()} /><br />
     <DataBox color='black' icon='wallet' content={`Price : ${exam.price}`} className='mt-5' size='large' />
 

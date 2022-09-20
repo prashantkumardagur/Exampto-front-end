@@ -61,6 +61,7 @@ const SignUpPage = () => {
         <Form onSubmit={submitHandler}>
             <InputField label='Name' id='name' name='name' required />
             <SelectField label='Program' name='program' defaultValue='JEE' required>
+                <option value={undefined} disabled selected>Select your program</option>
                 <option value="JEE">JEE</option>
                 <option value="NEET">NEET</option>
                 <option value='CDS'>CDS</option>

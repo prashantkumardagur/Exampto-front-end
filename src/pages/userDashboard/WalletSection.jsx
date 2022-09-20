@@ -44,8 +44,9 @@ const WalletSection = () => {
   
   useEffect(() => {
     const loadPaymentButton = async () => {
-      await loadScript("https://checkout.razorpay.com/v1/payment-button.js", "pl_K9q9p6w5myKguu"); // Test version
-      // await loadScript("https://checkout.razorpay.com/v1/payment-button.js", "pl_KCKrFBhFiAGDNx"); // Live version
+      let btnId = REACT_APP_PAYMENT_BTN_ID || "pl_K9q9p6w5myKguu";
+      // Test version: "pl_K9q9p6w5myKguu"  // Live version: "pl_KCKrFBhFiAGDNx"
+      await loadScript("https://checkout.razorpay.com/v1/payment-button.js", REACT_APP_PAYMENT_BTN_ID);
     }
 
     const getWallet = async () => {
