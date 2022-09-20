@@ -60,7 +60,7 @@ const SignUpPage = () => {
         {state && <DataBox content={state.msg} color={state.color} size='small' />}
         <Form onSubmit={submitHandler}>
             <InputField label='Name' id='name' name='name' required />
-            <SelectField label='Program' name='program' defaultValue='JEE' required>
+            <SelectField label='Program' name='program' required>
                 <option value={undefined} disabled selected>Select your program</option>
                 <option value="JEE">JEE</option>
                 <option value="NEET">NEET</option>
