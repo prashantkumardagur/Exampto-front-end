@@ -22,7 +22,7 @@ const OtherSections = (props) => {
         </div>
       </div>
       
-      <div className="home-feature grid-md-2 gap-3">
+      <div className="home-feature grid-md-2 gap-3 d-grid">
         <div className="feature-content">
           <h4 className='haccent'>Challenge Zone</h4>
           <h5 className='my-3'>Get the chance to Earn while you Learn</h5>
