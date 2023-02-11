@@ -8,29 +8,30 @@ const OtherSections = (props) => {
   return (<>
     <div className='home-features' id='features' style={{marginTop: "10vw"}}>
 
-      <div className="home-feature grid-md-2 gap-3">
+      <div className="home-feature d-grid grid-md-2 gap-3">
         <div className="feature-image">
-          <img src="/images/decoration/ChooseandCompete.png" alt='feature' className='ml-md-auto mr-md-6' />
+          <img src="/images/decoration/ChallengeZone.png" alt='feature' className='mr-md-auto ml-md-6' />
         </div>
         <div className="feature-content">
           <h4 className='haccent'>Choose and Compete</h4>
+          <h5 className='my-3'>Customized test series</h5>
+          <p className='txt2 fs-4 mb-4 text-justify'>Students can pick and order customized test-series and choose type 
+            of exams, number of subjects, number of questions, level of difficulty and time of test.
+          </p>
+          <Hbtn to="/auth/signup" >Get Started</Hbtn>
+        </div>
+      </div>
+      
+      <div className="home-feature grid-md-2 gap-3">
+        <div className="feature-content">
+          <h4 className='haccent'>Challenge Zone</h4>
           <h5 className='my-3'>Get the chance to Earn while you Learn</h5>
           <p className='txt2 fs-4 mb-4 text-justify'>Choose any Public Contest Based on your favourite Subject or Exam and win 
             contest money with Live tracking of your Performance.</p>
           <Hbtn to="/auth/signup" >Get Started</Hbtn>
         </div>
-      </div>
-
-      <div className="home-feature d-grid grid-md-2 gap-3">
-        <div className="feature-content">
-          <h4 className='haccent'>Challenge Zone</h4>
-          <h5 className='my-3'>Customized contests for every subjects</h5>
-          <p className='txt2 fs-4 mb-4 text-justify'>Challenge your friends and find out if they are smart enough to beat you 
-          in your favorite subject.</p>
-          <Hbtn to="/auth/signup" >Get Started</Hbtn>
-        </div>
         <div className="feature-image">
-          <img src="/images/decoration/ChallengeZone.png" alt='feature' className='mr-md-auto ml-md-6' />
+          <img src="/images/decoration/ChooseandCompete.png" alt='feature' className='ml-md-auto mr-md-6' />
         </div>
       </div>
 

@@ -42,6 +42,7 @@ export const AuthContextProvider = (props) => {
         localStorage.removeItem('token');
         localStorage.removeItem('person');
         localStorage.removeItem('expiry');
+        setIsLoading(false);
         return;
       }
       if (token && person) {

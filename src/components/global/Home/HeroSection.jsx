@@ -9,9 +9,8 @@ const HeroSection = () => {
 
       <div className="hero-content p-relative">
         <h1 className='w500'>Are you the Next Champion?!</h1>
-        <p className='fs-4 my-5'>Welcome to EXAMPTO - India’s Trusted Platform for Exam-based Battleground. 
-        We provide a Gamified platform to Practice, Compete and Win Real Cash from different exams that TOP 
-        Educators curate. Start your journey with us. Let us showcase your Talent.
+        <p className='fs-4 my-5'> Welcome to EXAMPTO - India’s Trusted Platform for Exam based Battleground. Exampto Provides Customized Pick and Order 
+          Test series for all exams and provides Live Gamified Contest to Compete and Win Real Rewards.
         </p>
         <div className="hero-btn d-md-flex align-center">
           <Hbtn to="/auth/signup" className="mr-3" >Sign Up Now</Hbtn>
